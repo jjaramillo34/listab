@@ -1,0 +1,4 @@
+# This file ensures the images directory is tracked by git
+# Add your campaign images here:
+# - campaign-banner.png
+# - monkey-mascot.png
