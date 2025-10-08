@@ -55,7 +55,7 @@ export const teamMembers: TeamMember[] = [
     animation: 'bounce',
     showSparkles: false,
     gorillaName: 'Gorilón',
-    photo: '/images/team/ian.jpg',
+    photo: '/images/team/ian.jpeg',
     photos: [
       '/images/team/ian1.jpeg',
       '/images/team/ian2.jpeg',
@@ -109,7 +109,7 @@ export const teamMembers: TeamMember[] = [
     animation: 'float',
     showSparkles: true,
     gorillaName: 'Gorilita',
-    photo: '/images/team/valentina.jpg',
+    photo: '/images/team/valentina.jpeg',
     photos: [
       '/images/team/valentina1.jpeg',
       '/images/team/valentina2.jpeg',
@@ -136,7 +136,7 @@ export const teamMembers: TeamMember[] = [
     animation: 'wiggle',
     showSparkles: false,
     gorillaName: 'Gorilita',
-    photo: '/images/team/majo.jpg',
+    photo: '/images/team/majo.jpeg',
     photos: [
       '/images/team/majo1.jpeg',
       '/images/team/majo2.jpeg',
