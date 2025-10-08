@@ -154,45 +154,156 @@ export default function Home() {
   }
 
   const team = [
-    { name: 'Paul Cordova', position: 'Presidente', animation: 'dance', showSparkles: true, gorillaName: 'Gorilín' },
-    { name: 'John Doe', position: 'Vice Presidente', animation: 'bounce', showSparkles: false, gorillaName: 'Gorilón' },
-    { name: 'Sofia Jaramillo', position: 'Tesorera', animation: 'pulse', showSparkles: true, gorillaName: 'Gorilita' },
-    { name: 'Jane Doe', position: 'Vocal 1', animation: 'wiggle', showSparkles: false, gorillaName: 'Gorilín' },
-    { name: 'Maria Joe Doe', position: 'Vocal 2', animation: 'float', showSparkles: true, gorillaName: 'Gorilón' },
+    { name: 'Daniel Córdoba', position: 'Presidente', animation: 'dance', showSparkles: true, gorillaName: 'Gorilín' },
+    { name: 'Ian Vilaña', position: 'Vice Presidente', animation: 'bounce', showSparkles: false, gorillaName: 'Gorilón' },
+    { name: 'Sofy Jaramillo', position: 'Tesorera', animation: 'pulse', showSparkles: true, gorillaName: 'Gorilita' },
+    { name: 'Majo Guevara', position: 'Vocal', animation: 'wiggle', showSparkles: false, gorillaName: 'Gorilón' },
+    { name: 'Valentina Caserez', position: 'Vocal', animation: 'float', showSparkles: true, gorillaName: 'Gorilín' },
+    { name: 'Giuliana Carrera', position: 'Vocal', animation: 'dance', showSparkles: false, gorillaName: 'Gorilita' },
   ]
 
   const propuestas = [
     {
       icon: BookOpen,
       title: 'Mejores Espacios de Estudio',
-      description: 'Renovaremos las áreas comunes con WiFi mejorado y zonas de estudio cómodas.'
+      description: 'Renovaremos las áreas comunes con WiFi mejorado y zonas de estudio cómodas.',
+      eyeCatchingWords: ['¡WIFI GRATIS!', 'ESTUDIO', 'COMODIDAD', 'TECNOLOGÍA']
     },
     {
       icon: Palette,
       title: 'Arte y Cultura',
-      description: 'Organizaremos eventos culturales mensuales y talleres de expresión artística.'
+      description: 'Organizaremos eventos culturales mensuales y talleres de expresión artística.',
+      eyeCatchingWords: ['¡CREATIVIDAD!', 'ARTE', 'CULTURA', 'TALENTO']
     },
     {
       icon: Trophy,
       title: 'Deportes para Todos',
-      description: 'Crearemos torneos inter-clases y acceso a más actividades deportivas.'
+      description: 'Crearemos torneos inter-clases y acceso a más actividades deportivas.',
+      eyeCatchingWords: ['¡COMPETENCIA!', 'DEPORTE', 'GANAR', 'EQUIPO']
     },
     {
       icon: Heart,
       title: 'Bienestar Estudiantil',
-      description: 'Implementaremos un programa de apoyo entre estudiantes y salud mental.'
+      description: 'Implementaremos un programa de apoyo entre estudiantes y salud mental.',
+      eyeCatchingWords: ['¡CUIDADO!', 'SALUD', 'APOYO', 'BIENESTAR']
     },
     {
       icon: Leaf,
       title: 'Colegio Sostenible',
-      description: 'Iniciaremos proyectos de reciclaje y cuidado del medio ambiente.'
+      description: 'Iniciaremos proyectos de reciclaje y cuidado del medio ambiente.',
+      eyeCatchingWords: ['¡VERDE!', 'RECICLAJE', 'NATURALEZA', 'FUTURO']
     },
     {
       icon: PartyPopper,
       title: 'Más Eventos',
-      description: 'Planificaremos actividades recreativas y de integración mensuales.'
+      description: 'Planificaremos actividades recreativas y de integración mensuales.',
+      eyeCatchingWords: ['¡DIVERSIÓN!', 'FIESTA', 'AMIGOS', 'RECUERDOS']
     },
   ]
+
+  // Spinning Card Component
+  const SpinningCard = ({ propuesta, index }: { propuesta: any, index: number }) => {
+    const [isFlipped, setIsFlipped] = useState(false)
+    const IconComponent = propuesta.icon
+
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: index * 0.1 }}
+        viewport={{ once: true }}
+        className="relative h-80 w-full"
+        onHoverStart={() => setIsFlipped(true)}
+        onHoverEnd={() => setIsFlipped(false)}
+      >
+        <motion.div
+          className="relative w-full h-full"
+          animate={{ rotateY: isFlipped ? 180 : 0 }}
+          transition={{ duration: 0.6 }}
+          style={{ transformStyle: "preserve-3d" }}
+        >
+          {/* Front of card */}
+          <motion.div
+            className="absolute inset-0 w-full h-full bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 border-t-4 border-primary-500 cursor-pointer"
+            style={{ backfaceVisibility: "hidden" }}
+            whileHover={{ y: -10, scale: 1.02 }}
+          >
+            <motion.div 
+              initial={{ scale: 0.8 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+              viewport={{ once: true }}
+              className="mb-6"
+            >
+              <div className="bg-primary-100 w-20 h-20 rounded-full flex items-center justify-center group-hover:bg-primary-200 transition-colors duration-300">
+                <IconComponent className="w-10 h-10 text-primary-600" />
+              </div>
+            </motion.div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">{propuesta.title}</h3>
+            <p className="text-gray-600 leading-relaxed">{propuesta.description}</p>
+            <motion.div
+              className="mt-4 text-center"
+              animate={{ opacity: 0.7 }}
+              transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+            >
+              <span className="text-sm text-primary-600 font-semibold">👆 ¡Hover para ver más!</span>
+            </motion.div>
+          </motion.div>
+
+          {/* Back of card with eye-catching words */}
+          <motion.div
+            className="absolute inset-0 w-full h-full bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-xl p-8 flex flex-col items-center justify-center"
+            style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+          >
+            <motion.div
+              className="text-center"
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              <h3 className="text-2xl font-bold text-white mb-6">{propuesta.title}</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {propuesta.eyeCatchingWords.map((word: string, wordIndex: number) => (
+                  <motion.div
+                    key={wordIndex}
+                    initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
+                    animate={{ 
+                      opacity: 1, 
+                      scale: 1, 
+                      rotate: 0,
+                      y: [0, -5, 0]
+                    }}
+                    transition={{ 
+                      duration: 0.5, 
+                      delay: wordIndex * 0.1,
+                      y: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+                    }}
+                    className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 text-white font-bold text-sm text-center shadow-lg"
+                  >
+                    {word}
+                  </motion.div>
+                ))}
+              </div>
+              <motion.div
+                className="mt-6"
+                animate={{ 
+                  scale: [1, 1.1, 1],
+                  rotate: [0, 5, -5, 0]
+                }}
+                transition={{ 
+                  duration: 2, 
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <span className="text-yellow-300 text-lg font-bold">✨ ¡IMPACTO! ✨</span>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white">
@@ -265,22 +376,7 @@ export default function Home() {
                   transition={{ delay: 1, duration: 0.6 }}
                   className="absolute inset-0 bg-gradient-to-t from-primary-600/20 to-transparent"
                 />
-                {/* Floating Mascot in Hero */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.5, duration: 0.8 }}
-                  className="absolute top-4 right-4"
-                >
-                  <AnimatedMascot 
-                    size={80} 
-                    animation="dance" 
-                    showSparkles={true}
-                    showName={true}
-                    name={gorillaNames.hero}
-                    className="drop-shadow-2xl"
-                  />
-                </motion.div>
+                
               </div>
             </motion.div>
           </div>
@@ -307,46 +403,129 @@ export default function Home() {
           <div className="w-24 h-1 bg-primary-500 mx-auto rounded-full"></div>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {team.map((member, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 50, rotateX: -15 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.15 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden cursor-pointer group"
+              whileHover={{ 
+                y: -15, 
+                scale: 1.05,
+                rotateY: 5
+              }}
+              className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer group relative"
             >
-              <div className="bg-gradient-to-br from-primary-400 to-primary-600 h-48 flex items-center justify-center relative">
+              {/* Background gradient on hover */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                className="absolute inset-0 bg-gradient-to-br from-primary-50 to-orange-50 rounded-3xl"
+              />
+              
+              {/* Mascot section */}
+              <div className="bg-gradient-to-br from-primary-400 to-primary-600 h-56 flex items-center justify-center relative overflow-hidden">
+                {/* Animated background pattern */}
+                <motion.div
+                  animate={{ 
+                    rotate: 360,
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{ 
+                    duration: 8, 
+                    repeat: Infinity, 
+                    ease: "linear" 
+                  }}
+                  className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-full"
+                />
+                
                 <AnimatedMascot 
-                  size={100} 
+                  size={120} 
                   animation={member.animation as any}
                   showSparkles={member.showSparkles}
                   showName={true}
                   name={member.gorillaName}
-                  className="group-hover:scale-110 transition-transform duration-300"
+                  className="group-hover:scale-110 transition-transform duration-300 relative z-10"
                 />
+                
+                {/* Hover overlay effect */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
-                  className="absolute inset-0 bg-black/20 flex items-center justify-center rounded-t-2xl"
+                  className="absolute inset-0 bg-black/20 flex items-center justify-center rounded-t-3xl"
                 >
                   <motion.div
-                    initial={{ scale: 0 }}
-                    whileHover={{ scale: 1 }}
-                    transition={{ duration: 0.3 }}
-                    className="bg-white/90 rounded-full p-3"
+                    initial={{ scale: 0, rotate: -180 }}
+                    whileHover={{ scale: 1, rotate: 0 }}
+                    transition={{ duration: 0.5, type: "spring" }}
+                    className="bg-white/95 rounded-full p-4 shadow-lg"
                   >
-                    <Zap className="w-8 h-8 text-primary-600" />
+                    <Zap className="w-10 h-10 text-primary-600" />
+                  </motion.div>
+                </motion.div>
+
+                {/* Position badge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.15 + 0.3 }}
+                  viewport={{ once: true }}
+                  className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 shadow-lg"
+                >
+                  <span className="text-xs font-bold text-primary-600">
+                    {member.position.split(' ')[0]}
+                  </span>
+                </motion.div>
+              </div>
+              
+              {/* Content section */}
+              <div className="p-8 text-center relative z-10">
+                <motion.h3 
+                  className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {member.name}
+                </motion.h3>
+                <motion.p 
+                  className="text-primary-600 font-semibold text-lg mb-4"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  {member.position}
+                </motion.p>
+                
+                {/* Fun interactive element */}
+                <motion.div
+                  className="mt-4"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  <motion.div
+                    animate={{ 
+                      scale: [1, 1.05, 1],
+                      opacity: [0.7, 1, 0.7]
+                    }}
+                    transition={{ 
+                      duration: 2, 
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    className="inline-block bg-gradient-to-r from-primary-500 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg"
+                  >
+                    ✨ ¡Conóceme! ✨
                   </motion.div>
                 </motion.div>
               </div>
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                <p className="text-primary-600 font-semibold">{member.position}</p>
-              </div>
+
+              {/* Decorative corner element */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.15 + 0.5 }}
+                viewport={{ once: true }}
+                className="absolute top-2 left-2 w-6 h-6 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full shadow-lg"
+              />
             </motion.div>
           ))}
         </div>
@@ -388,84 +567,281 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {propuestas.map((propuesta, index) => {
-              const IconComponent = propuesta.icon
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 border-t-4 border-primary-500 cursor-pointer group"
-                >
-                  <motion.div 
-                    initial={{ scale: 0.8 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
-                    viewport={{ once: true }}
-                    className="mb-6"
-                  >
-                    <div className="bg-primary-100 w-20 h-20 rounded-full flex items-center justify-center group-hover:bg-primary-200 transition-colors duration-300">
-                      <IconComponent className="w-10 h-10 text-primary-600" />
-                    </div>
-                  </motion.div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{propuesta.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{propuesta.description}</p>
-                </motion.div>
-              )
-            })}
+            {propuestas.map((propuesta, index) => (
+              <SpinningCard key={index} propuesta={propuesta} index={index} />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Por Qué Votarnos Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            ¿Por Qué Votarnos?
-          </h2>
-          <div className="w-24 h-1 bg-primary-500 mx-auto rounded-full"></div>
-        </motion.div>
+      {/* School Info Banner */}
+      <section className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.div
+              initial={{ scale: 0.8 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="inline-block mb-6"
+            >
+              <span className="bg-white text-blue-600 px-6 py-2 rounded-full text-xl font-bold shadow-lg">
+                🏫 CENTRO EDUCATIVO ECUATORIANO HOLANDÉS
+              </span>
+            </motion.div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              ¡Para Todos los Estudiantes!
+            </h2>
+            <p className="text-lg md:text-xl max-w-3xl mx-auto">
+              Desde los más pequeños hasta los más grandes, Lista B trabaja para hacer de nuestro colegio un lugar mejor para todos
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { icon: Users, title: "Experiencia", description: "Nuestro equipo ha participado activamente en diversas actividades estudiantiles" },
-            { icon: Target, title: "Compromiso", description: "Trabajaremos incansablemente para cumplir cada una de nuestras promesas" },
-            { icon: Ear, title: "Escuchamos", description: "Tus ideas y opiniones son importantes para nosotros. ¡Te escucharemos siempre!" }
-          ].map((item, index) => {
-            const IconComponent = item.icon
-            return (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.05 }}
-                className="text-center group cursor-pointer"
-              >
+      {/* Por Qué Votarnos Section */}
+      <section className="bg-gradient-to-br from-primary-50 to-orange-50 py-20 relative overflow-hidden">
+        {/* Background decorations */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            animate={{ 
+              rotate: 360,
+              scale: [1, 1.1, 1]
+            }}
+            transition={{ 
+              duration: 20, 
+              repeat: Infinity, 
+              ease: "linear" 
+            }}
+            className="absolute -top-20 -right-20 w-40 h-40 bg-primary-200 rounded-full opacity-20"
+          />
+          <motion.div
+            animate={{ 
+              rotate: -360,
+              scale: [1, 1.2, 1]
+            }}
+            transition={{ 
+              duration: 15, 
+              repeat: Infinity, 
+              ease: "linear" 
+            }}
+            className="absolute -bottom-20 -left-20 w-32 h-32 bg-orange-200 rounded-full opacity-20"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="inline-block mb-6"
+            >
+              <span className="bg-gradient-to-r from-primary-500 to-orange-500 text-white px-8 py-3 rounded-full text-2xl font-bold shadow-xl">
+                🎯 ¿POR QUÉ VOTARNOS? 🎯
+              </span>
+            </motion.div>
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              ¡Somos la Mejor Opción!
+            </h2>
+            <div className="w-32 h-2 bg-gradient-to-r from-primary-500 to-orange-500 mx-auto rounded-full mb-8"></div>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              <strong>Para niños pequeños y estudiantes grandes:</strong> Tenemos propuestas que benefician a todos en el Centro Educativo Ecuatoriano Holandés
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { 
+                icon: Users, 
+                title: "Experiencia", 
+                description: "Nuestro equipo ha participado activamente en diversas actividades estudiantiles",
+                emoji: "🌟",
+                kidFriendly: "¡Somos súper experimentados!",
+                highSchool: "Liderazgo comprobado en múltiples proyectos"
+              },
+              { 
+                icon: Target, 
+                title: "Compromiso", 
+                description: "Trabajaremos incansablemente para cumplir cada una de nuestras promesas",
+                emoji: "💪",
+                kidFriendly: "¡Prometemos y cumplimos!",
+                highSchool: "Transparencia y responsabilidad en cada acción"
+              },
+              { 
+                icon: Ear, 
+                title: "Escuchamos", 
+                description: "Tus ideas y opiniones son importantes para nosotros. ¡Te escucharemos siempre!",
+                emoji: "👂",
+                kidFriendly: "¡Tu voz es importante!",
+                highSchool: "Participación estudiantil real y efectiva"
+              }
+            ].map((item, index) => {
+              const IconComponent = item.icon
+              return (
                 <motion.div 
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
+                  key={index}
+                  initial={{ opacity: 0, y: 50, rotateX: -15 }}
+                  whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
                   viewport={{ once: true }}
-                  className="bg-primary-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-200 transition-colors duration-300"
+                  whileHover={{ 
+                    y: -15, 
+                    scale: 1.05,
+                    rotateY: 5
+                  }}
+                  className="relative group cursor-pointer"
                 >
-                  <IconComponent className="w-10 h-10 text-primary-600" />
+                  <motion.div
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
+                    viewport={{ once: true }}
+                    className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border-4 border-transparent hover:border-primary-300 relative overflow-hidden"
+                  >
+                    {/* Background gradient on hover */}
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      className="absolute inset-0 bg-gradient-to-br from-primary-50 to-orange-50 rounded-2xl"
+                    />
+                    
+                    {/* Content */}
+                    <div className="relative z-10">
+                      {/* Icon with animation */}
+                      <motion.div 
+                        className="relative mb-6"
+                        whileHover={{ scale: 1.1, rotate: 10 }}
+                      >
+                        <div className="bg-gradient-to-br from-primary-100 to-orange-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto group-hover:from-primary-200 group-hover:to-orange-200 transition-all duration-300 shadow-lg">
+                          <IconComponent className="w-12 h-12 text-primary-600" />
+                        </div>
+                        <motion.div
+                          className="absolute -top-2 -right-2 text-3xl"
+                          animate={{ 
+                            rotate: [0, 10, -10, 0],
+                            scale: [1, 1.2, 1]
+                          }}
+                          transition={{ 
+                            duration: 2, 
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        >
+                          {item.emoji}
+                        </motion.div>
+                      </motion.div>
+
+                      {/* Title with special effect */}
+                      <motion.h3 
+                        className="text-3xl font-bold text-gray-900 mb-4 text-center"
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        {item.title}
+                      </motion.h3>
+
+                      {/* Kid-friendly message */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.2 + 0.6 }}
+                        viewport={{ once: true }}
+                        className="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-lg p-4 mb-4 border-l-4 border-yellow-400"
+                      >
+                        <p className="text-lg font-semibold text-orange-800 text-center">
+                          {item.kidFriendly}
+                        </p>
+                      </motion.div>
+
+                      {/* High school message */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.2 + 0.8 }}
+                        viewport={{ once: true }}
+                        className="bg-gradient-to-r from-blue-100 to-primary-100 rounded-lg p-4 mb-4 border-l-4 border-blue-400"
+                      >
+                        <p className="text-sm font-medium text-blue-800 text-center">
+                          {item.highSchool}
+                        </p>
+                      </motion.div>
+
+                      {/* Main description */}
+                      <p className="text-gray-600 text-center leading-relaxed">
+                        {item.description}
+                      </p>
+
+                      {/* Fun interactive element */}
+                      <motion.div
+                        className="mt-6 text-center"
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        <motion.div
+                          animate={{ 
+                            scale: [1, 1.05, 1],
+                            opacity: [0.7, 1, 0.7]
+                          }}
+                          transition={{ 
+                            duration: 2, 
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                          className="inline-block bg-gradient-to-r from-primary-500 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg"
+                        >
+                          ✨ ¡Toca para más info! ✨
+                        </motion.div>
+                      </motion.div>
+                    </div>
+                  </motion.div>
                 </motion.div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
-              </motion.div>
-            )
-          })}
+              )
+            })}
+          </div>
+
+          {/* Bottom call to action */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center mt-16"
+          >
+            <motion.div
+              animate={{ 
+                scale: [1, 1.02, 1],
+                boxShadow: [
+                  "0 10px 25px rgba(0,0,0,0.1)",
+                  "0 20px 40px rgba(0,0,0,0.15)",
+                  "0 10px 25px rgba(0,0,0,0.1)"
+                ]
+              }}
+              transition={{ 
+                duration: 3, 
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="inline-block bg-gradient-to-r from-primary-500 to-orange-500 text-white px-12 py-6 rounded-2xl shadow-2xl"
+            >
+              <h3 className="text-2xl md:text-3xl font-bold mb-2">
+                🎉 ¡Lista B para Todos! 🎉
+              </h3>
+              <p className="text-lg">
+                Pequeños y grandes, juntos hacemos la diferencia
+              </p>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
