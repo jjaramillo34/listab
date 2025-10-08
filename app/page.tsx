@@ -27,12 +27,16 @@ const AnimatedMascot = ({
   size = 120, 
   animation = "float", 
   className = "",
-  showSparkles = false 
+  showSparkles = false,
+  showName = false,
+  name = "Gorilín"
 }: { 
   size?: number
   animation?: "float" | "bounce" | "pulse" | "wiggle" | "dance"
   className?: string
   showSparkles?: boolean
+  showName?: boolean
+  name?: string
 }) => {
   const animations = {
     float: {
@@ -87,7 +91,7 @@ const AnimatedMascot = ({
     >
       <Image
         src="/images/gorilla.png"
-        alt="Lista B Mascot"
+        alt={`${name} - Lista B Mascot`}
         width={size}
         height={size}
         className="drop-shadow-lg"
@@ -108,19 +112,53 @@ const AnimatedMascot = ({
           <Sparkles className="w-6 h-6 text-yellow-400" />
         </motion.div>
       )}
+      {showName && (
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          className="absolute -bottom-8 left-1/2 transform -translate-x-1/2"
+        >
+          <div className="bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-bold whitespace-nowrap shadow-lg">
+            {name}
+          </div>
+        </motion.div>
+      )}
     </motion.div>
   )
 }
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('propuestas')
+  const [mascotClickCount, setMascotClickCount] = useState(0)
+
+  // Cool gorilla names for different sections
+  const gorillaNames = {
+    hero: "Gorilín",
+    team: "Gorilón",
+    propuestas: "Gorilita", 
+    showcase: "Gorilín",
+    cta1: "Gorilón",
+    cta2: "Gorilita"
+  }
+
+  // Fun alternative names that appear on click
+  const funNames = [
+    "Gorilín", "Gorilón", "Gorilita", "Gorilín", "Gorilón", "Gorilita",
+    "🦍 Super Gorila", "💪 Gorila Fuerte", "🎉 Gorila Feliz", 
+    "⚡ Gorila Eléctrico", "🌟 Gorila Estrella", "🚀 Gorila Espacial"
+  ]
+
+  const getCurrentMascotName = () => {
+    return funNames[mascotClickCount % funNames.length]
+  }
 
   const team = [
-    { name: 'Paul Cordova', position: 'Presidente', animation: 'dance', showSparkles: true },
-    { name: 'John Doe', position: 'Vice Presidente', animation: 'bounce', showSparkles: false },
-    { name: 'Sofia Jaramillo', position: 'Tesorera', animation: 'pulse', showSparkles: true },
-    { name: 'Jane Doe', position: 'Vocal 1', animation: 'wiggle', showSparkles: false },
-    { name: 'Maria Joe Doe', position: 'Vocal 2', animation: 'float', showSparkles: true },
+    { name: 'Paul Cordova', position: 'Presidente', animation: 'dance', showSparkles: true, gorillaName: 'Gorilín' },
+    { name: 'John Doe', position: 'Vice Presidente', animation: 'bounce', showSparkles: false, gorillaName: 'Gorilón' },
+    { name: 'Sofia Jaramillo', position: 'Tesorera', animation: 'pulse', showSparkles: true, gorillaName: 'Gorilita' },
+    { name: 'Jane Doe', position: 'Vocal 1', animation: 'wiggle', showSparkles: false, gorillaName: 'Gorilín' },
+    { name: 'Maria Joe Doe', position: 'Vocal 2', animation: 'float', showSparkles: true, gorillaName: 'Gorilón' },
   ]
 
   const propuestas = [
@@ -238,6 +276,8 @@ export default function Home() {
                     size={80} 
                     animation="dance" 
                     showSparkles={true}
+                    showName={true}
+                    name={gorillaNames.hero}
                     className="drop-shadow-2xl"
                   />
                 </motion.div>
@@ -283,6 +323,8 @@ export default function Home() {
                   size={100} 
                   animation={member.animation as any}
                   showSparkles={member.showSparkles}
+                  showName={true}
+                  name={member.gorillaName}
                   className="group-hover:scale-110 transition-transform duration-300"
                 />
                 <motion.div
@@ -338,6 +380,8 @@ export default function Home() {
                 size={60} 
                 animation="float" 
                 showSparkles={true}
+                showName={true}
+                name={gorillaNames.propuestas}
                 className="drop-shadow-lg"
               />
             </motion.div>
@@ -435,12 +479,23 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              viewport={{ once: true }}
+              className="inline-block mb-4"
+            >
+              <span className="bg-primary-600 text-white px-6 py-2 rounded-full text-2xl font-bold shadow-lg">
+                🦍 GORILÍN 🦍
+              </span>
+            </motion.div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               ¡Conoce a Nuestro Mascota!
             </h2>
             <div className="w-24 h-1 bg-primary-500 mx-auto rounded-full mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Nuestro gorila mascota representa la fuerza, inteligencia y diversión que traemos a Lista B
+              <strong>Gorilín</strong> representa la fuerza, inteligencia y diversión que traemos a Lista B. ¡Es nuestro compañero más cool!
             </p>
           </motion.div>
 
@@ -450,14 +505,26 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="flex-shrink-0"
+              className="flex-shrink-0 cursor-pointer"
+              onClick={() => setMascotClickCount(prev => prev + 1)}
             >
               <AnimatedMascot 
                 size={200} 
                 animation="dance" 
                 showSparkles={true}
+                showName={true}
+                name={getCurrentMascotName()}
                 className="drop-shadow-2xl"
               />
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-center mt-4"
+              >
+                <p className="text-sm text-gray-500 italic">
+                  ¡Haz clic en Gorilín para ver sus nombres secretos! 👆
+                </p>
+              </motion.div>
             </motion.div>
             
             <motion.div
@@ -468,7 +535,7 @@ export default function Home() {
               className="text-center lg:text-left max-w-2xl"
             >
               <h3 className="text-3xl font-bold text-gray-900 mb-6">
-                ¡El Gorila de Lista B!
+                ¡Gorilín de Lista B!
               </h3>
               <div className="space-y-4 text-lg text-gray-600">
                 <div className="flex items-center gap-3">
@@ -552,6 +619,8 @@ export default function Home() {
             size={70} 
             animation="bounce" 
             showSparkles={true}
+            showName={true}
+            name={gorillaNames.cta1}
             className="drop-shadow-2xl"
           />
         </motion.div>
@@ -567,6 +636,8 @@ export default function Home() {
             size={60} 
             animation="wiggle" 
             showSparkles={false}
+            showName={true}
+            name={gorillaNames.cta2}
             className="drop-shadow-2xl"
           />
         </motion.div>
