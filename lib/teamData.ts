@@ -37,7 +37,7 @@ export const teamMembers: TeamMember[] = [
       '/images/team/daniel5.jpeg',
     ],
     year: '2025',
-    age: 17,
+    age: 16,
     favoriteQuote: 'Liderazgo significa servir a los demás y trabajar juntos por un objetivo común.',
     bio: 'Como presidente de Lista B, mi compromiso es escuchar a todos los estudiantes y trabajar incansablemente para hacer de nuestro colegio un lugar mejor. Creo en el poder del trabajo en equipo y la participación activa de cada estudiante.',
     hobbies: [
@@ -172,13 +172,14 @@ export const teamMembers: TeamMember[] = [
       '/images/team/giuliana5.jpeg',
     ],
     year: '2025',
-    age: 16,
+    age: 7
+    ,
     favoriteQuote: 'La diversidad y la inclusión hacen que nuestro colegio sea un lugar especial.',
-    bio: 'Como vocal, trabajo para promover la diversidad y la inclusión en todas nuestras actividades. Cada estudiante merece sentirse valorado y escuchado en nuestro colegio.',
+    bio: 'Giuliana Carrera es una niña alegre y afectuosa que contagia su energía positiva en cada actividad que realiza. Inteligente y siempre curiosa, disfruta participar activamente en deportes como el baloncesto, fútbol, gimnasia y carreras, demostrando dedicación y disciplina en cada entrenamiento. Además, Giuliana cultiva su lado artístico a través de la pintura y el baile, donde crea coreografías llenas de ritmo y creatividad. Su entusiasmo y entrega la convierten en una gran compañera, capaz de enfrentar desafíos con una sonrisa y de inspirar a quienes la rodean a crecer en armonía y alegría.',
     hobbies: [
-      { name: 'music', description: 'Toco violín y me gusta la música clásica y contemporánea.' },
-      { name: 'travel', description: 'Me encanta viajar y aprender sobre diferentes culturas.' },
-      { name: 'sports', description: 'Practico danza y me gusta el ballet clásico.' }
+      { name: 'drawing', description: 'Me encanta dibujar y pintar.' },
+      { name: 'dancing', description: 'Me encanta bailar y hacer coreografías.' },
+      { name: 'sports', description: 'Practico deportes y me gusta el baloncesto.' }
     ],
     instagram: '@giu.carrera',
     email: 'giuliana@listab.com'
