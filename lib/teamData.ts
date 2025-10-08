@@ -28,7 +28,7 @@ export const teamMembers: TeamMember[] = [
     animation: 'dance',
     showSparkles: true,
     gorillaName: 'Gorilín',
-    photo: '/images/team/daniel.jpg',
+    photo: '/images/team/daniel.jpeg',
     photos: [
       '/images/team/daniel1.jpeg',
       '/images/team/daniel2.jpeg',

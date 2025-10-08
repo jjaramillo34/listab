@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { Star, Zap, Eye, Sparkles } from 'lucide-react'
 import AnimatedMascot from './AnimatedMascot'
 import TeamMemberProfile from './TeamMemberProfile'
+import ImageWithFallback from './ImageWithFallback'
 
 interface TeamMember {
   id?: string
@@ -65,7 +66,7 @@ const TeamCard = ({ member, index }: TeamCardProps) => {
         className="absolute inset-0 bg-gradient-to-br from-primary-50 to-orange-50 rounded-3xl"
       />
       
-      {/* Mascot section */}
+      {/* Photo/Mascot section */}
       <div className="bg-gradient-to-br from-primary-400 to-primary-600 h-56 flex items-center justify-center relative overflow-hidden">
         {/* Animated background pattern */}
         <motion.div
@@ -81,14 +82,26 @@ const TeamCard = ({ member, index }: TeamCardProps) => {
           className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-full"
         />
         
-        <AnimatedMascot 
-          size={120} 
-          animation={member.animation as any}
-          showSparkles={member.showSparkles}
-          showName={true}
-          name={member.gorillaName}
-          className="group-hover:scale-110 transition-transform duration-300 relative z-10"
-        />
+        {/* Team member photo */}
+        {member.photo ? (
+          <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-xl group-hover:scale-110 transition-transform duration-300 z-10">
+            <ImageWithFallback
+              src={member.photo}
+              alt={member.name}
+              fill
+              className="object-cover"
+            />
+          </div>
+        ) : (
+          <AnimatedMascot 
+            size={120} 
+            animation={member.animation as any}
+            showSparkles={member.showSparkles}
+            showName={true}
+            name={member.gorillaName}
+            className="group-hover:scale-110 transition-transform duration-300 relative z-10"
+          />
+        )}
         
         {/* Hover overlay effect */}
         <motion.div
