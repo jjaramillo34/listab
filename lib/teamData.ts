@@ -125,7 +125,7 @@ export const teamMembers: TeamMember[] = [
     "hobbies": [
       { "name": "reading", "description": "Me apasiona escribir historias y disfrutar de la literatura juvenil." },
       { "name": "painting", "description": "La acuarela y la naturaleza son mi inspiración principal en arte." },
-      { "name": "sports", "description": "Nadar y practicar atletismo me llenan de energía y me enseñan a superarme." }
+      { "name": "dancing", "description": "Me encanta bailar y hacer coreografías. Es algo que me gusta mucho y me hace feliz." }
     ],
     "instagram": "@vale.caceres",
     "email": "valentina@listab.com"
