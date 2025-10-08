@@ -66,11 +66,11 @@ export const teamMembers: TeamMember[] = [
     year: '2025',
     age: 16,
     favoriteQuote: 'La innovación y la tecnología pueden transformar nuestra experiencia educativa.',
-    bio: 'Como vicepresidente, mi objetivo es traer innovación y nuevas ideas al colegio. Me apasiona la tecnología y cómo podemos usarla para mejorar nuestra experiencia de aprendizaje.',
+    bio: 'Ian es una persona que destaca por su excelente compañerismo y actitud colaboradora. Alegre y siempre dispuesto a ayudar, contribuye al buen ambiente en cada grupo al que pertenece. Su responsabilidad se refleja en todas sus acciones, demostrando compromiso tanto en sus tareas como en el apoyo a sus compañeros. Ian es un ejemplo de cómo la cooperación y la alegría pueden hacer la diferencia en el trabajo en equipo y en la convivencia diaria.',
     hobbies: [
-      { name: 'gaming', description: 'Diseño videojuegos y me interesa la programación creativa.' },
+      { name: 'gaming', description: 'Me encanta jugar videojuegos y me gusta la programación creativa.' },
       { name: 'reading', description: 'Leo sobre ciencia y tecnología para estar siempre actualizado.' },
-      { name: 'photography', description: 'Capturo momentos especiales y me gusta la fotografía artística.' }
+      { name: 'painting', description: 'Me encanta pintar y hacer arte.' }
     ],
     instagram: '@ian.vilana',
     email: 'ian@listab.com'
@@ -145,13 +145,13 @@ export const teamMembers: TeamMember[] = [
       '/images/team/majo5.jpeg',
     ],
     year: '2025',
-    age: 11,
+    age: 8,
     favoriteQuote: 'Cada voz cuenta y cada idea puede hacer la diferencia en nuestro colegio.',
-    bio: 'Como vocal, represento las ideas y preocupaciones de todos los estudiantes. Mi compromiso es asegurar que cada perspectiva sea considerada en nuestras decisiones.',
+    bio: 'Majo Guevara es una niña inteligente y creativa que ha demostrado ser una gran líder en nuestro colegio. Ella es muy responsable y siempre está dispuesta a ayudar a los demás. Su personalidad positiva y su habilidad para motivar a los demás la hacen un gran vocal.',
     hobbies: [
-      { name: 'photography', description: 'Me especializo en fotografía de eventos y retratos.' },
-      { name: 'gaming', description: 'Juego videojuegos estratégicos y me gusta el diseño de niveles.' },
-      { name: 'cooking', description: 'Hago postres creativos y me gusta la repostería.' }
+      { name: 'drawing', description: 'Me encanta dibujar y pintar.' },
+      { name: 'dancing', description: 'Me encanta bailar y hacer coreografías.' },
+      { name: 'painting', description: 'Me encanta pintar y hacer arte.' }
     ],
     instagram: '@majo.guevara',
     email: 'majo@listab.com'
