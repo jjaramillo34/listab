@@ -171,12 +171,12 @@ export default function Home() {
   }
 
   const team = [
-    { name: 'Daniel Córdoba', position: 'Presidente', animation: 'dance', showSparkles: true, gorillaName: 'Gorilín' },
+    { name: 'Daniel Córdova', position: 'Presidente', animation: 'dance', showSparkles: true, gorillaName: 'Gorilín' },
     { name: 'Ian Vilaña', position: 'Vice Presidente', animation: 'bounce', showSparkles: false, gorillaName: 'Gorilón' },
     { name: 'Sofy Jaramillo', position: 'Tesorera', animation: 'pulse', showSparkles: true, gorillaName: 'Gorilita' },
-    { name: 'Majo Guevara', position: 'Vocal', animation: 'wiggle', showSparkles: false, gorillaName: 'Gorilón' },
-    { name: 'Valentina Caserez', position: 'Vocal', animation: 'float', showSparkles: true, gorillaName: 'Gorilín' },
-    { name: 'Giuliana Carrera', position: 'Vocal', animation: 'dance', showSparkles: false, gorillaName: 'Gorilita' },
+    { name: 'Valentina Cáceres ', position: 'Secretaria', animation: 'float', showSparkles: true, gorillaName: 'Gorilita' },
+    { name: 'Majo Guevara', position: 'Vocal', animation: 'wiggle', showSparkles: false, gorillaName: 'Gorilita' },
+    { name: 'Giuliana Carrera', position: 'Vocal', animation: 'dance', showSparkles: false, gorillaName: 'Gorilíta' },
   ]
 
   const propuestas = [
