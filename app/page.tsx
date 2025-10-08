@@ -19,7 +19,24 @@ import {
   Instagram,
   Twitter,
   Sparkles,
-  Zap
+  Zap,
+  School,
+  Star,
+  CheckCircle,
+  ArrowRight,
+  Crown,
+  Award,
+  Megaphone,
+  HandHeart,
+  Globe,
+  Calendar,
+  Lightbulb,
+  Shield,
+  ThumbsUp,
+  Eye,
+  MousePointer,
+  Info,
+  Play
 } from 'lucide-react'
 
 // Animated Mascot Component
@@ -246,7 +263,11 @@ export default function Home() {
               animate={{ opacity: 0.7 }}
               transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
             >
-              <span className="text-sm text-primary-600 font-semibold">👆 ¡Hover para ver más!</span>
+              <span className="text-sm text-primary-600 font-semibold flex items-center justify-center gap-1">
+                <MousePointer className="w-4 h-4" />
+                ¡Hover para ver más!
+                <ArrowRight className="w-4 h-4" />
+              </span>
             </motion.div>
           </motion.div>
 
@@ -296,7 +317,11 @@ export default function Home() {
                   ease: "easeInOut"
                 }}
               >
-                <span className="text-yellow-300 text-lg font-bold">✨ ¡IMPACTO! ✨</span>
+                <span className="text-yellow-300 text-lg font-bold flex items-center gap-2">
+                  <Zap className="w-5 h-5" />
+                  ¡IMPACTO!
+                  <Zap className="w-5 h-5" />
+                </span>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -511,21 +536,25 @@ export default function Home() {
                       repeat: Infinity,
                       ease: "easeInOut"
                     }}
-                    className="inline-block bg-gradient-to-r from-primary-500 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg"
+                    className="inline-block bg-gradient-to-r from-primary-500 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2"
                   >
-                    ✨ ¡Conóceme! ✨
+                    <Eye className="w-4 h-4" />
+                    ¡Conóceme!
+                    <Sparkles className="w-4 h-4" />
                   </motion.div>
                 </motion.div>
               </div>
 
-              {/* Decorative corner element */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.15 + 0.5 }}
-                viewport={{ once: true }}
-                className="absolute top-2 left-2 w-6 h-6 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full shadow-lg"
-              />
+                {/* Decorative corner element */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: index * 0.15 + 0.5 }}
+                  viewport={{ once: true }}
+                  className="absolute top-2 left-2 w-6 h-6 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full shadow-lg flex items-center justify-center"
+                >
+                  <Star className="w-3 h-3 text-white" />
+                </motion.div>
             </motion.div>
           ))}
         </div>
@@ -590,8 +619,9 @@ export default function Home() {
               viewport={{ once: true }}
               className="inline-block mb-6"
             >
-              <span className="bg-white text-blue-600 px-6 py-2 rounded-full text-xl font-bold shadow-lg">
-                🏫 CENTRO EDUCATIVO ECUATORIANO HOLANDÉS
+              <span className="bg-white text-blue-600 px-6 py-2 rounded-full text-xl font-bold shadow-lg flex items-center gap-2">
+                <School className="w-6 h-6" />
+                CENTRO EDUCATIVO ECUATORIANO HOLANDÉS
               </span>
             </motion.div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -649,8 +679,10 @@ export default function Home() {
               viewport={{ once: true }}
               className="inline-block mb-6"
             >
-              <span className="bg-gradient-to-r from-primary-500 to-orange-500 text-white px-8 py-3 rounded-full text-2xl font-bold shadow-xl">
-                🎯 ¿POR QUÉ VOTARNOS? 🎯
+              <span className="bg-gradient-to-r from-primary-500 to-orange-500 text-white px-8 py-3 rounded-full text-2xl font-bold shadow-xl flex items-center gap-3">
+                <Target className="w-7 h-7" />
+                ¿POR QUÉ VOTARNOS?
+                <Target className="w-7 h-7" />
               </span>
             </motion.div>
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -668,7 +700,7 @@ export default function Home() {
                 icon: Users, 
                 title: "Experiencia", 
                 description: "Nuestro equipo ha participado activamente en diversas actividades estudiantiles",
-                emoji: "🌟",
+                emoji: Star,
                 kidFriendly: "¡Somos súper experimentados!",
                 highSchool: "Liderazgo comprobado en múltiples proyectos"
               },
@@ -676,7 +708,7 @@ export default function Home() {
                 icon: Target, 
                 title: "Compromiso", 
                 description: "Trabajaremos incansablemente para cumplir cada una de nuestras promesas",
-                emoji: "💪",
+                emoji: Shield,
                 kidFriendly: "¡Prometemos y cumplimos!",
                 highSchool: "Transparencia y responsabilidad en cada acción"
               },
@@ -684,7 +716,7 @@ export default function Home() {
                 icon: Ear, 
                 title: "Escuchamos", 
                 description: "Tus ideas y opiniones son importantes para nosotros. ¡Te escucharemos siempre!",
-                emoji: "👂",
+                emoji: HandHeart,
                 kidFriendly: "¡Tu voz es importante!",
                 highSchool: "Participación estudiantil real y efectiva"
               }
@@ -729,7 +761,7 @@ export default function Home() {
                           <IconComponent className="w-12 h-12 text-primary-600" />
                         </div>
                         <motion.div
-                          className="absolute -top-2 -right-2 text-3xl"
+                          className="absolute -top-2 -right-2 bg-white rounded-full p-2 shadow-lg"
                           animate={{ 
                             rotate: [0, 10, -10, 0],
                             scale: [1, 1.2, 1]
@@ -740,7 +772,7 @@ export default function Home() {
                             ease: "easeInOut"
                           }}
                         >
-                          {item.emoji}
+                          <item.emoji className="w-6 h-6 text-primary-600" />
                         </motion.div>
                       </motion.div>
 
@@ -798,9 +830,11 @@ export default function Home() {
                             repeat: Infinity,
                             ease: "easeInOut"
                           }}
-                          className="inline-block bg-gradient-to-r from-primary-500 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg"
+                          className="inline-block bg-gradient-to-r from-primary-500 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2"
                         >
-                          ✨ ¡Toca para más info! ✨
+                          <MousePointer className="w-4 h-4" />
+                          ¡Toca para más info!
+                          <Sparkles className="w-4 h-4" />
                         </motion.div>
                       </motion.div>
                     </div>
@@ -834,10 +868,13 @@ export default function Home() {
               }}
               className="inline-block bg-gradient-to-r from-primary-500 to-orange-500 text-white px-12 py-6 rounded-2xl shadow-2xl"
             >
-              <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                🎉 ¡Lista B para Todos! 🎉
+              <h3 className="text-2xl md:text-3xl font-bold mb-2 flex items-center justify-center gap-3">
+                <PartyPopper className="w-8 h-8" />
+                ¡Lista B para Todos!
+                <PartyPopper className="w-8 h-8" />
               </h3>
-              <p className="text-lg">
+              <p className="text-lg flex items-center justify-center gap-2">
+                <Users className="w-5 h-5" />
                 Pequeños y grandes, juntos hacemos la diferencia
               </p>
             </motion.div>
@@ -862,8 +899,10 @@ export default function Home() {
               viewport={{ once: true }}
               className="inline-block mb-4"
             >
-              <span className="bg-primary-600 text-white px-6 py-2 rounded-full text-2xl font-bold shadow-lg">
-                🦍 GORILÍN 🦍
+              <span className="bg-primary-600 text-white px-6 py-2 rounded-full text-2xl font-bold shadow-lg flex items-center gap-2">
+                <Crown className="w-6 h-6" />
+                GORILÍN
+                <Crown className="w-6 h-6" />
               </span>
             </motion.div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -897,8 +936,10 @@ export default function Home() {
                 animate={{ opacity: 1 }}
                 className="text-center mt-4"
               >
-                <p className="text-sm text-gray-500 italic">
-                  ¡Haz clic en Gorilín para ver sus nombres secretos! 👆
+                <p className="text-sm text-gray-500 italic flex items-center justify-center gap-1">
+                  <MousePointer className="w-4 h-4" />
+                  ¡Haz clic en Gorilín para ver sus nombres secretos!
+                  <ArrowRight className="w-4 h-4" />
                 </p>
               </motion.div>
             </motion.div>
