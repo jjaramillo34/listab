@@ -93,7 +93,7 @@ export const teamMembers: TeamMember[] = [
     year: '2025',
     age: 13,
     favoriteQuote: 'La organización y el trabajo en equipo son la base del éxito en cualquier proyecto.',
-    bio: 'Como tesorera, me aseguraré de que cada centavo se use de manera transparente y efectiva para beneficiar a todos los estudiantes. La organización y la responsabilidad son mis prioridades.',
+    bio: 'Sofy es una joven creativa y sociable, apasionada por la pintura, la música y todo lo relacionado con el arte. Su alegría y simpatía contagian a quienes la rodean, siempre encontrando algo divertido en cada momento. Como tesorera, Sofy se compromete a gestionar los recursos con transparencia y responsabilidad, asegurando que cada centavo beneficie a los estudiantes. Su amor y dedicación por el colegio la inspiran a buscar nuevas ideas y mantener siempre presentes la honestidad y la organización.',
     hobbies: [
       { name: 'drawing', description: 'Me encanta dibujar y pintar.' },
       { name: 'music', description: 'Me encanta la música y me gusta tocar la guitarra.' },
@@ -118,9 +118,9 @@ export const teamMembers: TeamMember[] = [
       '/images/team/valentina5.jpeg',
     ],
     year: '2025',
-    age: 16,
+    age: 11,
     favoriteQuote: 'La comunicación efectiva es clave para conectar con todos los estudiantes.',
-    bio: 'Como secretaria, mi rol es mantener a todos informados y asegurar que cada voz sea escuchada. Creo firmemente en la importancia de la comunicación clara y efectiva.',
+    bio: 'Valentina tiene 11 años y su energía positiva ilumina cada espacio. Alegre, amable y sumamente perseverante, nunca se rinde hasta alcanzar sus metas. Su pasión por aprender la ha llevado a practicar karate por cuatro años, logrando medallas en diferentes categorías gracias a su disciplina y tenacidad. Valentina también explora el mundo artístico por medio de la pintura y el canto, participando en eventos escolares donde demuestra su creatividad y entusiasmo. Actualmente, brilla con su grupo de baile en diversas competencias, disfrutando la música y el ritmo cada día. Para Vale, cada momento es una oportunidad para crecer y contagiar su sonrisa a los demás, viviendo la vida como un baile lleno de color y alegría.',
     hobbies: [
       { name: 'reading', description: 'Escribo historias cortas y me gusta la literatura juvenil.' },
       { name: 'painting', description: 'Pinto acuarelas y me inspiro en la naturaleza para mis obras.' },
@@ -145,7 +145,7 @@ export const teamMembers: TeamMember[] = [
       '/images/team/majo5.jpeg',
     ],
     year: '2025',
-    age: 17,
+    age: 11,
     favoriteQuote: 'Cada voz cuenta y cada idea puede hacer la diferencia en nuestro colegio.',
     bio: 'Como vocal, represento las ideas y preocupaciones de todos los estudiantes. Mi compromiso es asegurar que cada perspectiva sea considerada en nuestras decisiones.',
     hobbies: [

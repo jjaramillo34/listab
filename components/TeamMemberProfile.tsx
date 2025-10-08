@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
 import { X, Heart, Palette, Music, Gamepad2, BookOpen, Camera, Utensils, MapPin, Pencil } from 'lucide-react'
+import ImageWithFallback from './ImageWithFallback'
 
 interface Hobby {
   name: string
@@ -74,7 +74,7 @@ const TeamMemberProfile = ({ member, isOpen, onClose }: TeamMemberProfileProps) 
                   transition={{ delay: 0.2, type: "spring" }}
                   className="relative"
                 >
-                  <Image
+                  <ImageWithFallback
                     src={member.photo}
                     alt={member.name}
                     width={120}

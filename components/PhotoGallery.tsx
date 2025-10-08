@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
 import { ChevronLeft, ChevronRight, X, Maximize2 } from 'lucide-react'
+import ImageWithFallback from './ImageWithFallback'
 
 interface PhotoGalleryProps {
   photos: string[]
@@ -45,7 +45,7 @@ const PhotoGallery = ({ photos, name }: PhotoGalleryProps) => {
             className="relative aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group"
             onClick={() => openLightbox(index)}
           >
-            <Image
+            <ImageWithFallback
               src={photo}
               alt={`${name} - Foto ${index + 1}`}
               fill
@@ -113,7 +113,7 @@ const PhotoGallery = ({ photos, name }: PhotoGalleryProps) => {
               className="relative max-w-5xl max-h-[80vh] w-full h-full"
               onClick={(e) => e.stopPropagation()}
             >
-              <Image
+              <ImageWithFallback
                 src={photos[currentIndex]}
                 alt={`${name} - Foto ${currentIndex + 1}`}
                 fill

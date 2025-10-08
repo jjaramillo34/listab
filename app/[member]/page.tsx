@@ -2,7 +2,6 @@
 
 import { useParams, useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import Link from 'next/link'
 import { 
   ArrowLeft, 
@@ -24,6 +23,7 @@ import {
 import { getTeamMemberById } from '@/lib/teamData'
 import PhotoGallery from '@/components/PhotoGallery'
 import AnimatedMascot from '@/components/AnimatedMascot'
+import ImageWithFallback from '@/components/ImageWithFallback'
 import { notFound } from 'next/navigation'
 
 export default function MemberPage() {
@@ -104,7 +104,7 @@ export default function MemberPage() {
                 className="absolute -inset-4 border-4 border-white/30 rounded-full"
               />
               <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-8 border-white shadow-2xl">
-                <Image
+                <ImageWithFallback
                   src={member.photo}
                   alt={member.name}
                   fill
