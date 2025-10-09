@@ -24,6 +24,9 @@ import { getTeamMemberById } from '@/lib/teamData'
 import PhotoGallery from '@/components/PhotoGallery'
 import AnimatedMascot from '@/components/AnimatedMascot'
 import ImageWithFallback from '@/components/ImageWithFallback'
+import FloatingElements from '@/components/FloatingElements'
+import StatsCounter from '@/components/StatsCounter'
+import FunFacts from '@/components/FunFacts'
 import { notFound } from 'next/navigation'
 
 export default function MemberPage() {
@@ -49,6 +52,22 @@ export default function MemberPage() {
     sports: Heart
   }
 
+  // Stats para cada miembro
+  const memberStats = [
+    { label: 'Años', value: member.age, icon: Star },
+    { label: 'Proyectos', value: 12, suffix: '+', icon: Award },
+    { label: 'Hobbies', value: member.hobbies.length, icon: Heart },
+    { label: 'Energía', value: 100, suffix: '%', icon: Vote },
+  ]
+
+  // Fun facts personalizados
+  const funFacts = [
+    `${member.name.split(' ')[0]} siempre está lleno de energía y entusiasmo`,
+    `Le encanta ${member.hobbies[0]?.name || 'aprender cosas nuevas'}`,
+    `Sueña con hacer del colegio un lugar mejor para todos`,
+    `Su lema es: "${member.favoriteQuote}"`,
+  ]
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white">
       {/* Header with Navigation */}
@@ -70,6 +89,7 @@ export default function MemberPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-r from-primary-600 to-orange-500 text-white py-20">
         <div className="absolute inset-0 bg-black opacity-10"></div>
+        <FloatingElements />
         
         {/* Animated background circles */}
         <motion.div
@@ -214,16 +234,69 @@ export default function MemberPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border-t-4 border-primary-500"
+          className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border-t-4 border-primary-500 relative overflow-hidden"
         >
-          <div className="flex items-center gap-3 mb-6">
-            <Award className="w-8 h-8 text-primary-600" />
-            <h2 className="text-3xl font-bold text-gray-900">Sobre Mí</h2>
+          {/* Decorative corner gradient */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-primary-100 to-transparent rounded-full blur-3xl opacity-50" />
+          
+          <div className="relative z-10">
+            <div className="flex items-center gap-3 mb-6">
+              <motion.div
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              >
+                <Award className="w-8 h-8 text-primary-600" />
+              </motion.div>
+              <h2 className="text-3xl font-bold text-gray-900">Sobre Mí</h2>
+            </div>
+            <p className="text-xl text-gray-700 leading-relaxed">
+              {member.bio}
+            </p>
           </div>
-          <p className="text-xl text-gray-700 leading-relaxed">
-            {member.bio}
-          </p>
         </motion.div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            En Números
+          </h2>
+          <div className="w-24 h-1 bg-primary-500 mx-auto rounded-full"></div>
+        </motion.div>
+        
+        <StatsCounter stats={memberStats} />
+      </section>
+
+      {/* Fun Facts Section */}
+      <section className="bg-gradient-to-br from-primary-50 to-orange-50 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Datos Curiosos
+            </h2>
+            <div className="w-24 h-1 bg-primary-500 mx-auto rounded-full mb-6"></div>
+            <p className="text-xl text-gray-600">
+              Descubre más sobre {member.name.split(' ')[0]}
+            </p>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto">
+            <FunFacts facts={funFacts} />
+          </div>
+        </div>
       </section>
 
       {/* Hobbies Section */}
@@ -247,22 +320,48 @@ export default function MemberPage() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 30, rotateY: -15 }}
+                whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-gradient-to-br from-primary-50 to-orange-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                whileHover={{ 
+                  y: -15, 
+                  scale: 1.05,
+                  rotateY: 5,
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                }}
+                className="bg-gradient-to-br from-primary-50 to-orange-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-primary-100 relative overflow-hidden group"
               >
-                <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <IconComponent className="w-8 h-8 text-primary-600" />
+                {/* Animated background effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-primary-200/20 to-orange-200/20"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: "100%" }}
+                  transition={{ duration: 0.6 }}
+                />
+                
+                <div className="relative z-10">
+                  <motion.div 
+                    className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-md group-hover:shadow-lg"
+                    whileHover={{ rotate: 360, scale: 1.2 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <IconComponent className="w-8 h-8 text-primary-600" />
+                  </motion.div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 capitalize text-center group-hover:text-primary-600 transition-colors">
+                    {hobby.name}
+                  </h3>
+                  <p className="text-gray-700 text-center leading-relaxed">
+                    {hobby.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 capitalize text-center">
-                  {hobby.name}
-                </h3>
-                <p className="text-gray-700 text-center leading-relaxed">
-                  {hobby.description}
-                </p>
+
+                {/* Corner decoration */}
+                <motion.div
+                  className="absolute top-2 right-2 w-8 h-8 bg-primary-400 rounded-full opacity-20"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
               </motion.div>
             )
           })}
@@ -270,24 +369,54 @@ export default function MemberPage() {
       </section>
 
       {/* Photo Gallery Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 -z-10">
+          <motion.div
+            animate={{ 
+              scale: [1, 1.1, 1],
+              rotate: [0, 90, 0]
+            }}
+            transition={{ duration: 20, repeat: Infinity }}
+            className="absolute top-0 left-1/4 w-96 h-96 bg-primary-100 rounded-full blur-3xl opacity-30"
+          />
+          <motion.div
+            animate={{ 
+              scale: [1, 1.2, 1],
+              rotate: [0, -90, 0]
+            }}
+            transition={{ duration: 25, repeat: Infinity }}
+            className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-100 rounded-full blur-3xl opacity-30"
+          />
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-12 relative z-10"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <motion.h2 
+            className="text-4xl font-bold text-gray-900 mb-4"
+            whileHover={{ scale: 1.05 }}
+          >
             Galería de Fotos
-          </h2>
+          </motion.h2>
           <div className="w-24 h-1 bg-primary-500 mx-auto rounded-full mb-6"></div>
           <p className="text-xl text-gray-600">
             Algunos momentos especiales capturados
           </p>
         </motion.div>
 
-        <PhotoGallery photos={member.photos} name={member.name} />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <PhotoGallery photos={member.photos} name={member.name} />
+        </motion.div>
       </section>
 
       {/* Call to Action */}

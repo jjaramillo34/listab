@@ -56,11 +56,11 @@ const VideoSection = ({ videoSrc, title, description, className = "" }: VideoSec
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             ¿Por Qué Votar por Lista B?
           </h2>
           <div className="w-32 h-2 bg-gradient-to-r from-primary-500 to-orange-500 mx-auto rounded-full mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto px-4">
             {description}
           </p>
         </motion.div>

@@ -29,7 +29,16 @@ import {
   Gamepad2,
   Camera,
   Utensils,
-  MapPin
+  MapPin,
+  Award,
+  Waves,
+  Activity,
+  Mic,
+  Cake,
+  Popcorn,
+  Film,
+  Lightbulb,
+  Sparkles as SparklesIcon
 } from 'lucide-react'
 
 // Import components
@@ -39,6 +48,13 @@ import TeamCard from '../components/TeamCard'
 import WhyVoteCard from '../components/WhyVoteCard'
 import SectionHeader from '../components/SectionHeader'
 import VideoSection from '../components/VideoSection'
+import FloatingElements from '../components/FloatingElements'
+import CountdownTimer from '../components/CountdownTimer'
+import TestimonialCard from '../components/TestimonialCard'
+import AchievementBadge from '../components/AchievementBadge'
+import FallingIcons from '../components/FallingIcons'
+import MascotShowcase from '../components/MascotShowcase'
+import CallToActionSection from '../components/CallToActionSection'
 import { teamMembers } from '../lib/teamData'
 
 
@@ -69,43 +85,111 @@ export default function Home() {
 
   const team = teamMembers
 
+  // Election date - Set your actual election date here
+  const electionDate = new Date('2025-11-15') // Example: November 15, 2025
+
+  // Testimonials from students
+  const testimonials = [
+    {
+      name: "Carlos Mendoza",
+      grade: "10mo Grado",
+      quote: "Lista B realmente escucha nuestras ideas. Han demostrado compromiso con mejorar nuestro colegio."
+    },
+    {
+      name: "Ana García",
+      grade: "9no Grado",
+      quote: "Me encanta su propuesta de más eventos culturales. ¡Necesitamos más arte en el colegio!"
+    },
+    {
+      name: "Luis Torres",
+      grade: "11vo Grado",
+      quote: "Su plan de deportes para todos es exactamente lo que necesitábamos. ¡Tienen mi voto!"
+    }
+  ]
+
+  // Achievements
+  const achievements = [
+    {
+      title: "Experiencia",
+      description: "3+ años en consejos estudiantiles",
+      icon: Award,
+      color: "bg-gradient-to-br from-blue-500 to-blue-600"
+    },
+    {
+      title: "Proyectos",
+      description: "15+ iniciativas exitosas",
+      icon: Trophy,
+      color: "bg-gradient-to-br from-purple-500 to-purple-600"
+    },
+    {
+      title: "Compromiso",
+      description: "100% dedicación al colegio",
+      icon: Heart,
+      color: "bg-gradient-to-br from-pink-500 to-pink-600"
+    },
+    {
+      title: "Unidad",
+      description: "Equipo de 6 líderes",
+      icon: Users,
+      color: "bg-gradient-to-br from-green-500 to-green-600"
+    }
+  ]
+
   const propuestas = [
     {
-      icon: BookOpen,
-      title: 'Mejores Espacios de Estudio',
-      description: 'Renovaremos las áreas comunes con WiFi mejorado y zonas de estudio cómodas.',
-      eyeCatchingWords: ['¡WIFI GRATIS!', 'ESTUDIO', 'COMODIDAD', 'TECNOLOGÍA']
+      icon: Trophy,
+      title: '⚽ Torneos Deportivos',
+      description: 'Campeonatos de fútbol, volleyball, básquet y más deportes cada mes con premios y medallas.',
+      eyeCatchingWords: ['¡CAMPEONES!', '⚽ FÚTBOL', '🏐 VOLLEYBALL', '🏀 BÁSQUET']
+    },
+    {
+      icon: Mic,
+      title: '🎵 Festival de Talentos',
+      description: 'Shows mensuales donde puedes cantar, bailar, tocar instrumentos o hacer stand-up comedy.',
+      eyeCatchingWords: ['¡ESCENARIO!', '🎤 CANTAR', '💃 BAILAR', '🎸 MÚSICA']
     },
     {
       icon: Palette,
-      title: 'Arte y Cultura',
-      description: 'Organizaremos eventos culturales mensuales y talleres de expresión artística.',
-      eyeCatchingWords: ['¡CREATIVIDAD!', 'ARTE', 'CULTURA', 'TALENTO']
+      title: '🎨 Talleres Creativos',
+      description: 'Clases de pintura, dibujo, fotografía y arte digital después de clases totalmente gratis.',
+      eyeCatchingWords: ['¡ARTE!', '🎨 PINTURA', '📸 FOTOS', '✨ CREATIVIDAD']
     },
     {
-      icon: Trophy,
-      title: 'Deportes para Todos',
-      description: 'Crearemos torneos inter-clases y acceso a más actividades deportivas.',
-      eyeCatchingWords: ['¡COMPETENCIA!', 'DEPORTE', 'GANAR', 'EQUIPO']
+      icon: Utensils,
+      title: '🍕 Cafetería Mejorada',
+      description: 'Más opciones saludables, postres deliciosos y días temáticos con comida internacional.',
+      eyeCatchingWords: ['¡RICO!', '🍕 PIZZA', '🍰 POSTRES', '☕ CAFÉ']
     },
     {
-      icon: Heart,
-      title: 'Bienestar Estudiantil',
-      description: 'Implementaremos un programa de apoyo entre estudiantes y salud mental.',
-      eyeCatchingWords: ['¡CUIDADO!', 'SALUD', 'APOYO', 'BIENESTAR']
+      icon: Gamepad2,
+      title: '🎮 Zona Gamer',
+      description: 'Sala de videojuegos con consolas, torneos de eSports y espacio para juegos de mesa.',
+      eyeCatchingWords: ['¡JUEGA!', '🎮 CONSOLAS', '🏆 TORNEOS', '🎯 DIVERSIÓN']
     },
     {
-      icon: Leaf,
-      title: 'Colegio Sostenible',
-      description: 'Iniciaremos proyectos de reciclaje y cuidado del medio ambiente.',
-      eyeCatchingWords: ['¡VERDE!', 'RECICLAJE', 'NATURALEZA', 'FUTURO']
+      icon: Film,
+      title: '🎬 Cine Club',
+      description: 'Proyecciones de películas cada viernes, palomitas gratis y debates sobre cine.',
+      eyeCatchingWords: ['¡CINE!', '🎬 PELÍCULAS', '🍿 PALOMITAS', '⭐ VIERNES']
+    },
+    {
+      icon: BookOpen,
+      title: '📚 Biblioteca Digital',
+      description: 'WiFi ultra rápido, tablets para estudiar, área silenciosa y rincón de lectura acogedor.',
+      eyeCatchingWords: ['¡WIFI!', '📚 LIBROS', '💻 TABLETS', '📖 ESTUDIAR']
     },
     {
       icon: PartyPopper,
-      title: 'Más Eventos',
-      description: 'Planificaremos actividades recreativas y de integración mensuales.',
-      eyeCatchingWords: ['¡DIVERSIÓN!', 'FIESTA', 'AMIGOS', 'RECUERDOS']
+      title: '🎉 Fiestas Temáticas',
+      description: 'Eventos mensuales: Halloween, Navidad, Carnaval, día del estudiante con decoración increíble.',
+      eyeCatchingWords: ['¡FIESTA!', '🎃 HALLOWEEN', '🎄 NAVIDAD', '🎊 CARNAVAL']
     },
+    {
+      icon: Heart,
+      title: '💗 Apoyo Psicológico',
+      description: 'Espacio seguro para hablar, talleres de manejo de estrés y actividades de bienestar.',
+      eyeCatchingWords: ['¡APOYO!', '💗 ESCUCHA', '🧘 RELAX', '🤝 AYUDA']
+    }
   ]
 
 
@@ -114,6 +198,7 @@ export default function Home() {
       {/* Hero Section */}
       <header className="relative overflow-hidden bg-gradient-to-r from-primary-600 to-primary-500 text-white">
         <div className="absolute inset-0 bg-black opacity-10"></div>
+        <FloatingElements />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div 
@@ -136,7 +221,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 drop-shadow-lg"
               >
                 ¡Tu Voz, Nuestro Compromiso!
               </motion.h1>
@@ -144,7 +229,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.8 }}
-                className="text-xl md:text-2xl mb-8"
+                className="text-lg sm:text-xl md:text-2xl mb-8 px-4 lg:px-0"
               >
                 Juntos transformaremos nuestro colegio en un espacio mejor para todos
               </motion.p>
@@ -154,7 +239,7 @@ export default function Home() {
                 transition={{ delay: 0.8, duration: 0.6 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-primary-600 px-8 py-4 rounded-full text-lg font-bold hover:bg-primary-50 transition-all duration-300 shadow-xl"
+                className="bg-white text-primary-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-bold hover:bg-primary-50 transition-all duration-300 shadow-xl"
               >
                 Conoce nuestras propuestas
               </motion.button>
@@ -212,9 +297,56 @@ export default function Home() {
         description="Descubre por qué Lista B es la mejor opción para representar a todos los estudiantes del Centro Educativo Ecuatoriano Holandés. Nuestro compromiso, experiencia y visión nos hacen únicos."
       />
 
-      {/* Propuestas Section */}
-      <section className="bg-gray-50 py-20">
+      {/* Countdown Timer Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <CountdownTimer targetDate={electionDate} />
+      </section>
+
+      {/* Achievements Section */}
+      <section className="bg-gradient-to-br from-gray-50 to-primary-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Nuestros Logros
+            </h2>
+            <div className="w-24 h-1 bg-primary-500 mx-auto rounded-full mb-6"></div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Experiencia comprobada y compromiso real con el colegio
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {achievements.map((achievement, index) => (
+              <AchievementBadge key={index} achievement={achievement} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Propuestas Section */}
+      <section className="bg-gradient-to-br from-gray-50 via-primary-50 to-orange-50 py-20 relative overflow-hidden">
+        {/* Falling Icons Background */}
+        <FallingIcons />
+        
+        {/* Animated Background Circles */}
+        <motion.div
+          animate={{ scale: [1, 1.1, 1], rotate: [0, 45, 0] }}
+          transition={{ duration: 15, repeat: Infinity }}
+          className="absolute top-0 left-0 w-96 h-96 bg-primary-200/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{ scale: [1, 1.2, 1], rotate: [0, -45, 0] }}
+          transition={{ duration: 20, repeat: Infinity }}
+          className="absolute bottom-0 right-0 w-96 h-96 bg-orange-200/20 rounded-full blur-3xl"
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -222,12 +354,19 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16 relative"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Nuestras Propuestas
+            <motion.div
+              animate={{ rotate: [0, 5, -5, 0] }}
+              transition={{ duration: 3, repeat: Infinity }}
+              className="inline-block mb-4"
+            >
+              <SparklesIcon className="w-16 h-16 text-primary-600 mx-auto" />
+            </motion.div>
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
+              🎯 Nuestras Propuestas
             </h2>
-            <div className="w-24 h-1 bg-primary-500 mx-auto rounded-full mb-6"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprometidos con hacer de nuestro colegio un lugar mejor para todos
+            <div className="w-32 h-2 bg-gradient-to-r from-primary-500 to-orange-500 mx-auto rounded-full mb-6"></div>
+            <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto font-semibold">
+              ¡Ideas increíbles que harán del colegio el mejor lugar para estudiar y divertirse!
             </p>
             {/* Floating Mascot in Propuestas */}
             <motion.div
@@ -415,183 +554,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Mascot Showcase Section */}
-      <section className="bg-gradient-to-br from-primary-50 to-primary-100 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              viewport={{ once: true }}
-              className="inline-block mb-4"
-            >
-              <span className="bg-primary-600 text-white px-6 py-2 rounded-full text-2xl font-bold shadow-lg flex items-center gap-2">
-                <Crown className="w-6 h-6" />
-                GORILÍN
-                <Crown className="w-6 h-6" />
-              </span>
-            </motion.div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              ¡Conoce a Nuestro Mascota!
-            </h2>
-            <div className="w-24 h-1 bg-primary-500 mx-auto rounded-full mb-6"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              <strong>Gorilín</strong> representa la fuerza, inteligencia y diversión que traemos a Lista B. ¡Es nuestro compañero más cool!
-            </p>
-          </motion.div>
+      {/* Testimonials Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Lo Que Dicen los Estudiantes
+          </h2>
+          <div className="w-24 h-1 bg-primary-500 mx-auto rounded-full mb-6"></div>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Escucha las voces de quienes ya confían en Lista B
+          </p>
+        </motion.div>
 
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="flex-shrink-0 cursor-pointer"
-              onClick={() => setMascotClickCount(prev => prev + 1)}
-            >
-              <AnimatedMascot 
-                size={200} 
-                animation="dance" 
-                showSparkles={true}
-                showName={true}
-                name={getCurrentMascotName()}
-                className="drop-shadow-2xl"
-              />
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-center mt-4"
-              >
-                <p className="text-sm text-gray-500 italic flex items-center justify-center gap-1">
-                  <MousePointer className="w-4 h-4" />
-                  ¡Haz clic en Gorilín para ver sus nombres secretos!
-                  <ArrowRight className="w-4 h-4" />
-                </p>
-              </motion.div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-center lg:text-left max-w-2xl"
-            >
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">
-                ¡Gorilín de Lista B!
-              </h3>
-              <div className="space-y-4 text-lg text-gray-600">
-                <div className="flex items-center gap-3">
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                  >
-                    <Trophy className="w-6 h-6 text-primary-600" />
-                  </motion.div>
-                  <span><strong>Fuerza:</strong> Representa nuestra determinación para lograr cambios</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <motion.div
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    <Heart className="w-6 h-6 text-primary-600" />
-                  </motion.div>
-                  <span><strong>Corazón:</strong> Trabajamos con pasión por nuestro colegio</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <motion.div
-                    animate={{ y: [-2, 2, -2] }}
-                    transition={{ duration: 1, repeat: Infinity }}
-                  >
-                    <PartyPopper className="w-6 h-6 text-primary-600" />
-                  </motion.div>
-                  <span><strong>Diversión:</strong> Creemos que aprender debe ser divertido y emocionante</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard key={index} testimonial={testimonial} index={index} />
+          ))}
         </div>
       </section>
+
+      {/* Mascot Showcase Section */}
+      <MascotShowcase
+        gorillaNames={gorillaNames}
+        funNames={funNames}
+        mascotClickCount={mascotClickCount}
+        onMascotClick={() => setMascotClickCount(prev => prev + 1)}
+        getCurrentMascotName={getCurrentMascotName}
+      />
 
       {/* Call to Action */}
-      <section className="bg-gradient-to-r from-primary-600 to-primary-500 text-white py-20 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              ¡El Cambio Empieza Contigo!
-            </h2>
-            <p className="text-xl md:text-2xl mb-8">
-              Vota por la Lista B y construyamos juntos el colegio que todos merecemos
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-primary-600 px-8 py-4 rounded-full text-lg font-bold hover:bg-primary-50 transition-all duration-300 shadow-xl flex items-center justify-center gap-2"
-              >
-                <Vote className="w-6 h-6" />
-                Vota Lista B
-              </motion.button>
-              <motion.button 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-primary-600 transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                <MessageCircle className="w-6 h-6" />
-                Contáctanos
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
-        
-        {/* Floating Mascots in Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
-          viewport={{ once: true }}
-          className="absolute top-8 left-8 hidden lg:block"
-        >
-          <AnimatedMascot 
-            size={70} 
-            animation="bounce" 
-            showSparkles={true}
-            showName={true}
-            name={gorillaNames.cta1}
-            className="drop-shadow-2xl"
-          />
-        </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          viewport={{ once: true }}
-          className="absolute bottom-8 right-8 hidden lg:block"
-        >
-          <AnimatedMascot 
-            size={60} 
-            animation="wiggle" 
-            showSparkles={false}
-            showName={true}
-            name={gorillaNames.cta2}
-            className="drop-shadow-2xl"
-          />
-        </motion.div>
-      </section>
+      <CallToActionSection gorillaNames={gorillaNames} />
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
@@ -638,10 +636,12 @@ export default function Home() {
             <p className="text-sm text-gray-500">
               © 2025 Lista B - Elecciones Estudiantiles. Todos los derechos reservados.
             </p>
+            <p className="text-sm text-gray-500">
+              Desarrollado por <a href="https://jaramillohub.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary-500 transition-colors">Javier Jaramillo</a>
+            </p>
           </motion.div>
         </div>
       </footer>
     </div>
   )
 }
-
