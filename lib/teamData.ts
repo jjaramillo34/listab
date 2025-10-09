@@ -21,7 +21,6 @@ export interface TeamMember {
 }
 
 export const teamMembers: TeamMember[] = [
-
   {
     "id": "daniel",
     "name": "Daniel Córdova",
@@ -40,11 +39,11 @@ export const teamMembers: TeamMember[] = [
     "year": "2025",
     "age": 16,
     "favoriteQuote": "El verdadero liderazgo se demuestra al servir y unir a las personas por un sueño común.",
-    "bio": "Como presidente de Lista B, me motiva construir un colegio donde todas las voces sean escuchadas y cada estudiante se sienta valorado. Creo que el trabajo en equipo es la base para lograr un ambiente de respeto, inclusión y crecimiento para todos.",
+    "bio": "Hola, mi nombre es Daniel Córdova, tengo 16 años y estudio en 3ro BGU. Más allá de mi enfoque académico, el deporte es esencial en mi vida; practico fútbol y voy al gimnasio, donde he aprendido la importancia de la disciplina, el trabajo en equipo y la perseverancia. Estos valores me han formado para ser un líder capaz de escuchar y valorar la opinión de cada estudiante, promoviendo la unión y el respeto en nuestra unidad educativa como una verdadera familia. Estoy convencido de que juntos podemos crecer y lograr todos nuestros objetivos, apoyándonos siempre unos a otros.",
     "hobbies": [
-      { "name": "painting", "description": "Disfruto plasmar ideas y emociones en el lienzo, tanto en pintura tradicional como digital." },
-      { "name": "music", "description": "La guitarra es mi compañera creativa y me inspira a componer melodías únicas." },
-      { "name": "sports", "description": "Mantenerme activo jugando fútbol me enseña la importancia del trabajo en equipo y la disciplina." }
+      { "name": "reading", "description": "Me gusta leer libros y aprender cosas nuevas." },
+      { "name": "gaming", "description": "Me gusta jugar videojuegos y me gusta la programación creativa." },
+      { "name": "sports", "description": "Mantenerme activo jugando fútbol y en el gimnasio me enseña la importancia del trabajo en equipo y la disciplina." }
     ],
     "instagram": "@daniel.cordova",
     "email": "daniel@listab.com"
@@ -67,11 +66,11 @@ export const teamMembers: TeamMember[] = [
     "year": "2025",
     "age": 16,
     "favoriteQuote": "La creatividad aplicada a la tecnología nos da el poder de transformar nuestro mundo.",
-    "bio": "Ian se destaca por su entusiasmo, compañerismo y capacidad de inspirar confianza en cualquier equipo. Apasionado por la innovación y la colaboración, sabe que la responsabilidad y la alegría son esenciales para crear grandes proyectos y fortalecer la comunidad escolar.",
+    "bio": "Ian tiene 15 años y es una persona que disfruta de la vida con entusiasmo. Su pasatiempo favorito es jugar fútbol, deporte en el que se divierte y aprende sobre trabajo en equipo y dedicación. Además, Ian es un apasionado de los videojuegos, que le permiten desarrollar su creatividad y habilidades estratégicas. La música también ocupa un lugar especial en su día a día, acompañando siempre sus mejores momentos y motivándolo a seguir creciendo con alegría y buena vibra.",
     "hobbies": [
+      { "name": "sports", "description": "Me gusta futbol." },
       { "name": "gaming", "description": "Descubro mundos nuevos en los videojuegos, y la programación me desafía a crear mis propias aventuras." },
-      { "name": "reading", "description": "Me gusta investigar sobre avances científicos y tecnológicos que están cambiando nuestra sociedad." },
-      { "name": "painting", "description": "Expreso mi visión del mundo a través de la pintura y el arte digital." }
+      { "name": "music", "description": "La música me inspira y me acompaña en todos los momentos importantes." }
     ],
     "instagram": "@ian.vilana",
     "email": "ian@listab.com"
@@ -183,8 +182,9 @@ export const teamMembers: TeamMember[] = [
     ],
     "instagram": "@giu.carrera",
     "email": "giuliana@listab.com"
-  },
+  }
 ]
+
 
 export function getTeamMemberById(id: string): TeamMember | undefined {
   return teamMembers.find(member => member.id === id)
