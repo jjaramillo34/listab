@@ -68,7 +68,7 @@ export const teamMembers: TeamMember[] = [
     "favoriteQuote": "La creatividad aplicada a la tecnología nos da el poder de transformar nuestro mundo.",
     "bio": "Ian tiene 15 años y es una persona que disfruta de la vida con entusiasmo. Su pasatiempo favorito es jugar fútbol, deporte en el que se divierte y aprende sobre trabajo en equipo y dedicación. Además, Ian es un apasionado de los videojuegos, que le permiten desarrollar su creatividad y habilidades estratégicas. La música también ocupa un lugar especial en su día a día, acompañando siempre sus mejores momentos y motivándolo a seguir creciendo con alegría y buena vibra.",
     "hobbies": [
-      { "name": "sports", "description": "Me gusta futbol." },
+      { "name": "sports", "description": "En mis tiempos libres me gusta jugar futbol con mis amigos o compañeros de colegio." },
       { "name": "gaming", "description": "Descubro mundos nuevos en los videojuegos, y la programación me desafía a crear mis propias aventuras." },
       { "name": "music", "description": "La música me inspira y me acompaña en todos los momentos importantes." }
     ],
