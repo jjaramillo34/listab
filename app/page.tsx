@@ -273,7 +273,7 @@ export default function Home() {
             >
               <span className="bg-white text-blue-600 px-6 py-2 rounded-full text-xl font-bold shadow-lg flex items-center gap-2">
                 <School className="w-6 h-6" />
-                CENTRO EDUCATIVO ECUATORIANO HOLANDÉS
+                UNIDAD EDUCATIVA ECUATORIANO HOLANDÉS
               </span>
             </motion.div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
