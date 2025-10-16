@@ -58,6 +58,7 @@ import MascotShowcase from '../components/MascotShowcase'
 import CallToActionSection from '../components/CallToActionSection'
 import IntroductionSection from '../components/IntroductionSection'
 import ObjectivesSection from '../components/ObjectivesSection'
+import ConclusionSection from '../components/ConclusionSection'
 import { teamMembers } from '../lib/teamData'
 
 
@@ -625,6 +626,9 @@ export default function Home() {
 
       {/* Call to Action */}
       <CallToActionSection gorillaNames={gorillaNames} />
+
+      {/* Conclusion */}
+      <ConclusionSection />
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
