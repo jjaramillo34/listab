@@ -144,7 +144,7 @@ const ConclusionSection = () => {
                   className="bg-white/5 rounded-2xl p-6 border border-white/10"
                 >
                   <h4 className="text-lg font-bold mb-2 text-orange-300">Consejo Estudiantil</h4>
-                  <p className="text-white/80">Lista B 2024-2025</p>
+                  <p className="text-white/80">Lista B 2025-2026</p>
                   <div className="mt-4 h-16 border-b-2 border-dashed border-white/30"></div>
                   <p className="text-sm text-white/60 mt-2">Firma del Representante</p>
                 </motion.div>
@@ -154,7 +154,7 @@ const ConclusionSection = () => {
                   className="bg-white/5 rounded-2xl p-6 border border-white/10"
                 >
                   <h4 className="text-lg font-bold mb-2 text-orange-300">Comunidad Educativa</h4>
-                  <p className="text-white/80">Centro Educativo Ecuatoriano Holandés</p>
+                  <p className="text-white/80">Unidad Educativa Ecuatoriano Holandés</p>
                   <div className="mt-4 h-16 border-b-2 border-dashed border-white/30"></div>
                   <p className="text-sm text-white/60 mt-2">Aprobación Institucional</p>
                 </motion.div>

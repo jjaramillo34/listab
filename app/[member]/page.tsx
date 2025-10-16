@@ -432,7 +432,7 @@ export default function MemberPage() {
               ¡Únete a Nuestro Equipo!
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Juntos podemos hacer del Centro Educativo Ecuatoriano Holandés un lugar mejor para todos
+              Juntos podemos hacer del Unidad Educativa Ecuatoriano Holandés un lugar mejor para todos
             </p>
             <motion.div
               className="flex flex-wrap gap-4 justify-center"
@@ -469,7 +469,7 @@ export default function MemberPage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-lg mb-2">Lista B - Centro Educativo Ecuatoriano Holandés</p>
+          <p className="text-lg mb-2">Lista B - Unidad Educativa Ecuatoriano Holandés</p>
           <p className="text-gray-400">&copy; 2025 Todos los derechos reservados</p>
         </div>
       </footer>

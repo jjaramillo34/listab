@@ -267,7 +267,7 @@ export default function PropuestasPage() {
               Nuestras Propuestas
             </h1>
             <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto mb-8">
-              Un plan integral para mejorar la vida estudiantil en el Centro Educativo Ecuatoriano Holandés
+              Un plan integral para mejorar la vida estudiantil en el Unidad Educativa Ecuatoriano Holandés
             </p>
             
             <Link href="/">

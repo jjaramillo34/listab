@@ -59,6 +59,7 @@ import CallToActionSection from '../components/CallToActionSection'
 import IntroductionSection from '../components/IntroductionSection'
 import ObjectivesSection from '../components/ObjectivesSection'
 import ConclusionSection from '../components/ConclusionSection'
+import EnhancedPropuestasSection from '../components/EnhancedPropuestasSection'
 import { teamMembers } from '../lib/teamData'
 
 
@@ -304,7 +305,7 @@ export default function Home() {
       <VideoSection
         videoSrc="/images/video_new.mp4"
         title="¿Por Qué Votar por Lista B?"
-        description="Descubre por qué Lista B es la mejor opción para representar a todos los estudiantes del Centro Educativo Ecuatoriano Holandés. Nuestro compromiso, experiencia y visión nos hacen únicos."
+        description="Descubre por qué Lista B es la mejor opción para representar a todos los estudiantes del Unidad Educativa Ecuatoriano Holandés. Nuestro compromiso, experiencia y visión nos hacen únicos."
       />
 
       {/* Countdown Timer Section */}
@@ -339,96 +340,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Propuestas Section */}
-      <section className="bg-gradient-to-br from-gray-50 via-primary-50 to-orange-50 py-20 relative overflow-hidden">
-        {/* Falling Icons Background */}
-        <FallingIcons />
-        
-        {/* Animated Background Circles */}
-        <motion.div
-          animate={{ scale: [1, 1.1, 1], rotate: [0, 45, 0] }}
-          transition={{ duration: 15, repeat: Infinity }}
-          className="absolute top-0 left-0 w-96 h-96 bg-primary-200/20 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{ scale: [1, 1.2, 1], rotate: [0, -45, 0] }}
-          transition={{ duration: 20, repeat: Infinity }}
-          className="absolute bottom-0 right-0 w-96 h-96 bg-orange-200/20 rounded-full blur-3xl"
-        />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16 relative"
-          >
-            <motion.div
-              animate={{ rotate: [0, 5, -5, 0] }}
-              transition={{ duration: 3, repeat: Infinity }}
-              className="inline-block mb-4"
-            >
-              <SparklesIcon className="w-16 h-16 text-primary-600 mx-auto" />
-            </motion.div>
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-              🎯 Nuestras Propuestas
-            </h2>
-            <div className="w-32 h-2 bg-gradient-to-r from-primary-500 to-orange-500 mx-auto rounded-full mb-6"></div>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto font-semibold">
-              ¡Ideas increíbles que harán del colegio el mejor lugar para estudiar y divertirse!
-            </p>
-            {/* Floating Mascot in Propuestas */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="absolute -top-4 -right-4 hidden lg:block"
-            >
-              <AnimatedMascot 
-                size={60} 
-                animation="float" 
-                showSparkles={true}
-                showName={true}
-                name={gorillaNames.propuestas}
-                className="drop-shadow-lg"
-              />
-            </motion.div>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {propuestas.map((propuesta, index) => (
-              <SpinningCard key={index} propuesta={propuesta} index={index} />
-            ))}
-          </div>
-
-          {/* Ver Todas las Propuestas Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <Link href="/propuestas">
-              <motion.button 
-                whileHover={{ scale: 1.05, boxShadow: "0 20px 50px rgba(0,0,0,0.3)" }}
-                whileTap={{ scale: 0.95 }}
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="bg-gradient-to-r from-primary-600 to-orange-500 text-white px-10 py-4 rounded-full text-xl font-bold hover:from-primary-700 hover:to-orange-600 transition-all duration-300 shadow-xl flex items-center gap-3 mx-auto"
-              >
-                <Target className="w-6 h-6" />
-                Ver Todas las Propuestas Detalladas
-                <ArrowRight className="w-6 h-6" />
-              </motion.button>
-            </Link>
-            <p className="text-gray-600 mt-4 text-lg">
-              Descubre todas nuestras actividades planificadas para el año lectivo
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      {/* Enhanced Propuestas Section */}
+      <EnhancedPropuestasSection 
+        gorillaNames={gorillaNames}
+        propuestas={propuestas}
+      />
 
       {/* School Info Banner */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-16">
@@ -517,7 +433,7 @@ export default function Home() {
             </h2>
             <div className="w-32 h-2 bg-gradient-to-r from-primary-500 to-orange-500 mx-auto rounded-full mb-8"></div>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              <strong>Para niños pequeños y estudiantes grandes:</strong> Tenemos propuestas que benefician a todos en el Centro Educativo Ecuatoriano Holandés
+              <strong>Para niños pequeños y estudiantes grandes:</strong> Tenemos propuestas que benefician a todos en el Unidad Educativa Ecuatoriano Holandés
             </p>
           </motion.div>
 
