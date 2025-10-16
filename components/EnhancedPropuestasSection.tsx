@@ -14,7 +14,16 @@ import {
   Calendar,
   Users,
   Star,
-  CheckCircle
+  CheckCircle,
+  Award,
+  Lightbulb,
+  Leaf,
+  Gamepad2,
+  Music,
+  Gift,
+  Coffee,
+  Film,
+  Zap
 } from 'lucide-react'
 import Link from 'next/link'
 import AnimatedMascot from './AnimatedMascot'
@@ -40,59 +49,164 @@ const EnhancedPropuestasSection = ({ gorillaNames, propuestas }: EnhancedPropues
   ]
 
   const detailedActivities = [
+    // Educación
     {
       id: 'educacion',
       title: "Mentes Brillantes",
       subtitle: "Olimpiadas del Conocimiento",
-      description: "Fomentar el desarrollo intelectual y la sana competencia entre estudiantes.",
+      description: "Fomentar el desarrollo intelectual, el trabajo en equipo y la sana competencia entre los estudiantes, promoviendo el interés por el aprendizaje y la participación activa en actividades académicas.",
       date: "Marzo",
       icon: BookOpen,
       color: "from-blue-500 to-blue-600"
     },
     {
+      id: 'educacion',
+      title: "Reconocimiento al Cuadro de Honor",
+      description: "Reconocer y valorar el esfuerzo, la dedicación y el rendimiento académico de los estudiantes que han obtenido los mejores puntajes, promoviendo la motivación, la excelencia y el compromiso con el aprendizaje.",
+      date: "Al finalizar el primer y segundo trimestre",
+      icon: Award,
+      color: "from-purple-500 to-purple-600"
+    },
+    {
+      id: 'educacion',
+      title: "InnovaFest",
+      subtitle: "Feria de Emprendimiento",
+      description: "Promover el espíritu emprendedor y la creatividad de los estudiantes mediante la exposición y venta de productos elaborados por ellos mismos, fomentando el desarrollo de habilidades prácticas, la innovación y el trabajo colaborativo.",
+      date: "Enero",
+      icon: Lightbulb,
+      color: "from-green-500 to-green-600"
+    },
+    // Bienestar
+    {
       id: 'bienestar',
       title: "Stop and Think",
-      subtitle: "Charlas Formativas",
-      description: "Prevención del bullying, educación sexual responsable y primeros auxilios.",
+      description: "Promover el bienestar integral de la comunidad estudiantil mediante charlas formativas que fortalezcan el respeto, la empatía y la responsabilidad, brindando información y herramientas prácticas sobre prevención del bullying y ciberbullying, educación sexual responsable y primeros auxilios.",
+      topics: ["Bullying", "Sexualidad", "Primeros Auxilios"],
       date: "Febrero",
       icon: Heart,
-      color: "from-pink-500 to-pink-600"
+      color: "from-red-500 to-red-600"
+    },
+    {
+      id: 'bienestar',
+      title: "EcoGorila en Navidad",
+      subtitle: "Concurso de Pesebres con Material Reciclado",
+      description: "Fomentar la creatividad, el trabajo en equipo y la conciencia ambiental en la comunidad educativa mediante la elaboración de pesebres con materiales reciclables, promoviendo el espíritu navideño y el compromiso con el cuidado del planeta.",
+      date: "Diciembre",
+      icon: Leaf,
+      color: "from-green-500 to-green-600"
+    },
+    {
+      id: 'bienestar',
+      title: "Batalla ReciclaXtreme",
+      subtitle: "Campaña de Reciclaje",
+      description: "Fomentar la conciencia ambiental y la responsabilidad ecológica en la comunidad educativa, mediante una campaña de reciclaje que promueva la participación activa y competitiva de los cursos, incentivando el trabajo en equipo y la reducción de residuos dentro de la institución.",
+      date: "Noviembre a Febrero",
+      icon: Leaf,
+      color: "from-emerald-500 to-emerald-600"
+    },
+    // Deporte
+    {
+      id: 'deporte',
+      title: "Gincana Carnavalera",
+      description: "Fortalecer la integración, el trabajo en equipo y la sana convivencia entre los estudiantes mediante la realización de una gincana con actividades recreativas y juegos que promuevan la alegría, la cooperación y el espíritu festivo dentro de la comunidad educativa.",
+      date: "13 de Febrero",
+      icon: Gamepad2,
+      color: "from-green-500 to-green-600"
+    },
+    {
+      id: 'deporte',
+      title: "Más allá del Límite",
+      subtitle: "Reconocimiento al Mérito Deportivo",
+      description: "Reconocer y valorar el esfuerzo, la disciplina y el espíritu deportivo de los estudiantes que se destacan en distintas disciplinas, promoviendo la participación activa, la sana competencia y el fortalecimiento de los valores que fomenta el deporte dentro de la comunidad educativa.",
+      date: "Durante el año lectivo",
+      icon: Trophy,
+      color: "from-yellow-500 to-yellow-600"
     },
     {
       id: 'deporte',
       title: "La Gran Batalla",
-      subtitle: "Estudiantes vs Profesores",
-      description: "Encuentros deportivos que fomentan el compañerismo y espíritu deportivo.",
+      subtitle: "Encuentros Deportivos entre Estudiantes vs Profesores",
+      description: "Fomentar el compañerismo, la unión y el espíritu deportivo en la comunidad educativa mediante el apoyo activo de los estudiantes a los equipos finalistas y el reconocimiento a los ganadores del torneo, fortaleciendo los valores de respeto, esfuerzo y trabajo en equipo.",
       date: "Abril",
-      icon: Trophy,
-      color: "from-green-500 to-green-600"
+      icon: Users,
+      color: "from-red-500 to-red-600"
     },
     {
+      id: 'deporte',
+      title: "Apoyo en Encuentros Deportivos",
+      subtitle: "Festival Deportivo",
+      description: "Apoyo de los estudiantes en los encuentros deportivos de los equipos finalistas y así vivir un verdadero Festival Deportivo. Reconocimiento a los mejores equipos de cada torneo.",
+      date: "Enero",
+      icon: Trophy,
+      color: "from-blue-500 to-blue-600"
+    },
+    // Infraestructura
+    {
       id: 'infraestructura',
-      title: "Banda de Gala",
-      subtitle: "Dotación de Instrumentos",
-      description: "Fortalecer el desarrollo artístico y cultural de la institución.",
-      date: "Fin del año",
-      icon: Shield,
+      title: "Dotación de Sillas e Instrumentos para la Banda de Gala",
+      description: "Fortalecer el desarrollo artístico y cultural de la institución mediante la dotación de sillas e instrumentos musicales para la banda de gala, promoviendo el talento estudiantil, la participación en actos institucionales y el sentido de pertenencia hacia la comunidad educativa.",
+      date: "Fin del año lectivo",
+      icon: Music,
       color: "from-purple-500 to-purple-600"
+    },
+    // Fondos
+    {
+      id: 'fundraising',
+      title: "Rifa ($1)",
+      description: "Se tiene previsto realizar dos rifas con el propósito de recaudar fondos que permitan cumplir con todas las propuestas planteadas por el Consejo Estudiantil. Estas rifas estarán dirigidas a toda la comunidad educativa y contarán con premios atractivos, entre los que destacan dos mascotas y una membresía para el gimnasio.",
+      date: "Durante el año",
+      icon: Gift,
+      color: "from-pink-500 to-pink-600"
     },
     {
       id: 'fundraising',
       title: "Bar Estudiantil",
-      subtitle: "Recaudación de Fondos",
-      description: "Snacks y refrigerios dos veces al mes para apoyar proyectos.",
-      date: "Mensual",
-      icon: DollarSign,
+      description: "Otra estrategia para la recaudación de fondos, será la realización de un bar estudiantil que funcionará dos veces al mes, en el cual se ofrecerán diversos snacks y refrigerios a precios accesibles. Esta actividad busca no solo generar ingresos para apoyar las propuestas y proyectos del Consejo Estudiantil, sino también promover la convivencia y el sentido de comunidad entre los estudiantes.",
+      date: "Dos veces al mes",
+      icon: Coffee,
+      color: "from-orange-500 to-orange-600"
+    },
+    {
+      id: 'fundraising',
+      title: "Función de Cine",
+      description: "Se llevará a cabo una función de cine como parte de las actividades destinadas a la recaudación de fondos. Esta iniciativa busca ofrecer un espacio de recreación y sana convivencia entre los estudiantes, quienes podrán disfrutar de una película seleccionada especialmente para el evento. Además, durante la función se les brindará un pequeño snack como cortesía.",
+      date: "Durante el año",
+      icon: Film,
+      color: "from-indigo-500 to-indigo-600"
+    },
+    // Especiales
+    {
+      id: 'especiales',
+      title: "Vístete con Flow",
+      description: "Se llevará a cabo una vez al mes, donde los estudiantes tendrán la oportunidad de asistir a clases con su ropa preferida, respetando las normas de presentación y el respeto institucional. A cambio se solicitará una colaboración económica simbólica, cuyos fondos estarán destinados a proyectos y actividades que fortalezcan la participación estudiantil y el bienestar de toda la comunidad educativa.",
+      date: "Una vez al mes",
+      icon: Sparkles,
+      color: "from-rose-500 to-rose-600"
+    },
+    {
+      id: 'especiales',
+      title: "Torneo FIFA",
+      description: "Torneo FIFA donde los estudiantes podrán inscribirse y competir en consolas PlayStation, demostrando sus habilidades y pasión por el fútbol virtual. La actividad busca recaudar fondos para apoyar diversas propuestas y proyectos del Consejo Estudiantil, mientras se promueve la competencia sana, la camaradería y la diversión entre los participantes. Los ganadores recibirán reconocimientos especiales.",
+      date: "Durante el año",
+      icon: Gamepad2,
+      color: "from-blue-500 to-blue-600"
+    },
+    {
+      id: 'especiales',
+      title: "Energía Holandesa",
+      description: "Fomentar la convivencia, la motivación y el bienestar integral de los estudiantes mediante la realización mensual de la actividad \"Energía Holandesa\", promoviendo el movimiento, la alegría y la participación activa para iniciar la jornada escolar con entusiasmo y actitud positiva.",
+      date: "Noviembre a Junio",
+      icon: Zap,
       color: "from-yellow-500 to-yellow-600"
     },
     {
       id: 'especiales',
-      title: "Vístete con Flow",
-      subtitle: "Día de Ropa Casual",
-      description: "Una vez al mes, asiste con tu ropa preferida respetando las normas.",
-      date: "Mensual",
-      icon: Sparkles,
-      color: "from-rose-500 to-rose-600"
+      title: "Gorilovers Pet Show",
+      subtitle: "Concurso de Mascotas",
+      description: "Concurso de mascotas donde los estudiantes podrán mostrar y presentar a sus mascotas, promoviendo el cuidado animal y la responsabilidad. Esta actividad fomenta valores como el amor, la compasión y el respeto hacia los animales.",
+      date: "Durante el año",
+      icon: Heart,
+      color: "from-pink-500 to-pink-600"
     }
   ]
 
@@ -192,31 +306,16 @@ const EnhancedPropuestasSection = ({ gorillaNames, propuestas }: EnhancedPropues
           </div>
         </motion.div>
 
-        {/* Original Spinning Cards */}
+        {/* Activities Grid */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mb-16"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {propuestas.map((propuesta, index) => (
-              <SpinningCard key={index} propuesta={propuesta} index={index} />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Detailed Activities Grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
           className="mb-12"
         >
           <h3 className="text-3xl font-bold text-center text-gray-900 mb-8">
-            Actividades Detalladas
+            Nuestras Actividades
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -284,7 +383,7 @@ const EnhancedPropuestasSection = ({ gorillaNames, propuestas }: EnhancedPropues
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
           className="bg-gradient-to-r from-primary-600 to-orange-500 rounded-3xl p-8 text-white text-center mb-12"
         >
@@ -294,7 +393,7 @@ const EnhancedPropuestasSection = ({ gorillaNames, propuestas }: EnhancedPropues
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div>
-              <div className="text-3xl md:text-4xl font-bold mb-2">20+</div>
+              <div className="text-3xl md:text-4xl font-bold mb-2">18</div>
               <div className="text-sm md:text-base opacity-90">Actividades Planificadas</div>
             </div>
             <div>
@@ -316,7 +415,7 @@ const EnhancedPropuestasSection = ({ gorillaNames, propuestas }: EnhancedPropues
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
           viewport={{ once: true }}
           className="text-center"
         >
