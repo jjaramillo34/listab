@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import Image from 'next/image'
 import { 
   BookOpen, 
@@ -55,6 +56,8 @@ import AchievementBadge from '../components/AchievementBadge'
 import FallingIcons from '../components/FallingIcons'
 import MascotShowcase from '../components/MascotShowcase'
 import CallToActionSection from '../components/CallToActionSection'
+import IntroductionSection from '../components/IntroductionSection'
+import ObjectivesSection from '../components/ObjectivesSection'
 import { teamMembers } from '../lib/teamData'
 
 
@@ -277,6 +280,12 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Introducción */}
+      <IntroductionSection />
+
+      {/* Objetivos */}
+      <ObjectivesSection />
+
       {/* Team Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <SectionHeader 
@@ -391,6 +400,32 @@ export default function Home() {
               <SpinningCard key={index} propuesta={propuesta} index={index} />
             ))}
           </div>
+
+          {/* Ver Todas las Propuestas Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <Link href="/propuestas">
+              <motion.button 
+                whileHover={{ scale: 1.05, boxShadow: "0 20px 50px rgba(0,0,0,0.3)" }}
+                whileTap={{ scale: 0.95 }}
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="bg-gradient-to-r from-primary-600 to-orange-500 text-white px-10 py-4 rounded-full text-xl font-bold hover:from-primary-700 hover:to-orange-600 transition-all duration-300 shadow-xl flex items-center gap-3 mx-auto"
+              >
+                <Target className="w-6 h-6" />
+                Ver Todas las Propuestas Detalladas
+                <ArrowRight className="w-6 h-6" />
+              </motion.button>
+            </Link>
+            <p className="text-gray-600 mt-4 text-lg">
+              Descubre todas nuestras actividades planificadas para el año lectivo
+            </p>
+          </motion.div>
         </div>
       </section>
 
