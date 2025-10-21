@@ -56,7 +56,7 @@ export const sponsors: Sponsor[] = [
   },
   {
     name: "Matrix ",
-    logo: "/images/sponsors/donor2.jpg",
+    logo: "/images/donaciones/donor2.jpg",
     //website: "https://www.supermarket.com",
     tier: "platinum"
   }
