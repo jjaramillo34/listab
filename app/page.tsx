@@ -547,6 +547,34 @@ export default function Home() {
       {/* Donations Section - Gorilla Love */}
       <DonationsSection />
 
+      {/* Gallery Section */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              📸 Galería del Lanzamiento
+            </h2>
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+              Revive los momentos más emocionantes del lanzamiento oficial de Lista B. 
+              Cada imagen cuenta una historia de compromiso y esperanza.
+            </p>
+            <Link
+              href="/galeria"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white font-bold py-4 px-8 rounded-full text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            >
+              <Camera className="w-6 h-6" />
+              Ver Galería Completa
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Conclusion */}
       <ConclusionSection />
 

@@ -5,6 +5,7 @@ import { Heart, Sparkles, Award, Users, Gift, Star } from 'lucide-react'
 import { donors, sponsors, donationTiers } from '../lib/donorsData'
 import AnimatedMascot from './AnimatedMascot'
 import Image from 'next/image'
+import ImageWithFallback from './ImageWithFallback'
 
 export default function DonationsSection() {
   return (
@@ -117,13 +118,13 @@ export default function DonationsSection() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -5 }}
                 viewport={{ once: true }}
-                className={`bg-gradient-to-br ${tier.color} rounded-2xl p-4 md:p-6 text-white text-center shadow-xl relative overflow-hidden`}
+                className={`bg-gradient-to-br ${tier.color} rounded-2xl p-4 md:p-6 ${tier.textColor} text-center shadow-xl relative overflow-hidden`}
               >
                 <div className="absolute inset-0 bg-white opacity-10"></div>
                 <div className="relative z-10">
                   <div className="text-3xl md:text-4xl mb-2">{tier.icon}</div>
-                  <div className="font-bold text-base md:text-lg mb-1">{tier.name}</div>
-                  <div className="text-xs md:text-sm opacity-90">{tier.minAmount}</div>
+                  <div className="text-base md:text-lg mb-1 text-black drop-shadow-lg">{tier.name}</div>
+                  <div className="text-xs md:text-sm text-black drop-shadow-md">{tier.minAmount}</div>
                 </div>
               </motion.div>
             ))}
@@ -168,19 +169,17 @@ export default function DonationsSection() {
 
                   {/* Logo */}
                   <div className="relative h-32 mb-4 flex items-center justify-center">
-                    <Image
+                    <ImageWithFallback
                       src={sponsor.logo}
                       alt={sponsor.name}
                       fill
                       className="object-contain"
-                      onError={(e) => {
-                        // Fallback to text if logo doesn't exist
-                        e.currentTarget.style.display = 'none'
-                      }}
+                      fallbackSrc="/images/campaign-banner.jpeg"
                     />
-                    <div className="text-2xl font-bold text-gray-800 text-center">
-                      {sponsor.name}
-                    </div>
+                  </div>
+                  {/* Name */}
+                  <div className="text-2xl font-bold text-gray-800 text-center">
+                    {sponsor.name}
                   </div>
 
                   {/* Sparkles on hover */}
@@ -231,7 +230,7 @@ export default function DonationsSection() {
                     boxShadow: "0 20px 40px rgba(0,0,0,0.15)"
                   }}
                   viewport={{ once: true }}
-                  className={`bg-gradient-to-br ${tier?.color || 'from-gray-200 to-gray-400'} rounded-2xl p-6 text-white shadow-xl relative overflow-hidden group cursor-pointer`}
+                  className="bg-white rounded-2xl p-6 shadow-xl relative overflow-hidden group cursor-pointer border-t-4 border-orange-500"
                 >
                   {/* Background Pattern */}
                   <div className="absolute inset-0 opacity-10">
@@ -243,26 +242,39 @@ export default function DonationsSection() {
 
                   {/* Content */}
                   <div className="relative z-10">
+                    {/* Donor Photo */}
+                    {donor.photo && (
+                      <div className="relative w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                        <ImageWithFallback
+                          src={donor.photo}
+                          alt={donor.name}
+                          fill
+                          className="object-cover"
+                          fallbackSrc="/images/campaign-banner.jpeg"
+                        />
+                      </div>
+                    )}
+
                     {/* Tier Icon */}
                     <div className="text-4xl mb-3 text-center">
                       {tier?.icon || '❤️'}
                     </div>
 
                     {/* Donor Name */}
-                    <h4 className="text-lg md:text-xl font-bold text-center mb-2">
+                    <h4 className="text-lg md:text-xl font-bold text-center mb-2 text-gray-800">
                       {donor.name}
                     </h4>
 
                     {/* Type Badge */}
                     <div className="text-center">
-                      <span className="inline-block bg-white bg-opacity-30 px-3 py-1 rounded-full text-xs font-semibold">
+                      <span className={`inline-block bg-gradient-to-r ${tier?.color || 'from-orange-500 to-orange-600'} text-black px-3 py-1 rounded-full text-xs font-bold shadow-md`}>
                         {donor.type === 'family' ? '👨‍👩‍👧‍👦 Familia' : '🌟 Individual'}
                       </span>
                     </div>
 
                     {/* Message if available */}
                     {donor.message && (
-                      <p className="text-sm mt-3 text-center opacity-90 italic">
+                      <p className="text-sm mt-3 text-center text-gray-600 font-medium italic">
                         &ldquo;{donor.message}&rdquo;
                       </p>
                     )}

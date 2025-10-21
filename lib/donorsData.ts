@@ -5,6 +5,7 @@ export interface Donor {
   name: string
   type: 'family' | 'business' | 'individual'
   logo?: string // Optional logo path
+  photo?: string // Optional photo path
   amount?: string // Optional: 'platinum', 'gold', 'silver', 'bronze'
   message?: string // Optional thank you message
 }
@@ -19,23 +20,24 @@ export interface Sponsor {
 // Individual and Family Donors
 export const donors: Donor[] = [
   {
-    name: "Familia Colón",
-    type: "family",
+    name: "Francisco Colón",
+    type: "individual",
+    amount: "gold",
+    //photo: "/images/donaciones/donor1.jpeg"
+  },
+  {
+    name: "Danielle Graziano",
+    type: "individual",
     amount: "gold"
   },
   {
-    name: "Familia Graziano",
-    type: "family",
+    name: "Stacey Oliger",
+    type: "individual",
     amount: "gold"
   },
   {
-    name: "Familia Oliger",
-    type: "family",
-    amount: "gold"
-  },
-  {
-    name: "Familia Jaramillo",
-    type: "family",
+    name: "Javier Jaramillo",
+    type: "individual",
     amount: "platinum"
   }
 ]
@@ -43,8 +45,8 @@ export const donors: Donor[] = [
 // Business Sponsors (with logos)
 export const sponsors: Sponsor[] = [
   {
-    name: "Tu Empresa Aquí",
-    logo: "/images/sponsors/placeholder.png",
+    name: "ColpoVital Dra. Giannina Arroba",
+    logo: "/images/donaciones/donor1.jpeg",
     tier: "platinum"
   }
   // Add more sponsors here:
@@ -56,29 +58,33 @@ export const sponsors: Sponsor[] = [
   // }
 ]
 
-// Donation tier information
+// Donation tier information - Improved accessibility colors
 export const donationTiers = {
   platinum: {
     name: "Platino",
-    color: "from-slate-400 to-slate-600",
+    color: "from-slate-600 to-slate-800",
+    textColor: "text-black",
     icon: "💎",
-    minAmount: "$100+"
+    minAmount: "$50+"
   },
   gold: {
     name: "Oro",
-    color: "from-yellow-400 to-yellow-600",
+    color: "from-amber-600 to-amber-800",
+    textColor: "text-black",
     icon: "🥇",
-    minAmount: "$50+"
+    minAmount: "$25+"
   },
   silver: {
     name: "Plata",
-    color: "from-gray-300 to-gray-500",
+    color: "from-gray-600 to-gray-800",
+    textColor: "text-white",
     icon: "🥈",
-    minAmount: "$25+"
+    minAmount: "$15+"
   },
   bronze: {
     name: "Bronce",
-    color: "from-orange-400 to-orange-600",
+    color: "from-orange-600 to-orange-800",
+    textColor: "text-white",
     icon: "🥉",
     minAmount: "$10+"
   }
