@@ -60,6 +60,7 @@ import IntroductionSection from '../components/IntroductionSection'
 import ObjectivesSection from '../components/ObjectivesSection'
 import ConclusionSection from '../components/ConclusionSection'
 import EnhancedPropuestasSection from '../components/EnhancedPropuestasSection'
+import DonationsSection from '../components/DonationsSection'
 import { teamMembers } from '../lib/teamData'
 
 
@@ -542,6 +543,9 @@ export default function Home() {
 
       {/* Call to Action */}
       <CallToActionSection gorillaNames={gorillaNames} />
+
+      {/* Donations Section - Gorilla Love */}
+      <DonationsSection />
 
       {/* Conclusion */}
       <ConclusionSection />
