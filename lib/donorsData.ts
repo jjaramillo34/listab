@@ -28,15 +28,20 @@ export const donors: Donor[] = [
   {
     name: "Danielle Graziano",
     type: "individual",
-    amount: "gold"
+    amount: "silver"
   },
   {
     name: "Stacey Oliger",
     type: "individual",
-    amount: "gold"
+    amount: "bronze"
   },
   {
     name: "Javier Jaramillo",
+    type: "individual",
+    amount: "platinum"
+  },
+  {
+    name: "Oscar León",
     type: "individual",
     amount: "platinum"
   }
@@ -47,6 +52,12 @@ export const sponsors: Sponsor[] = [
   {
     name: "ColpoVital Dra. Giannina Arroba",
     logo: "/images/donaciones/donor1.jpeg",
+    tier: "platinum"
+  },
+  {
+    name: "Matrix ",
+    logo: "/images/sponsors/donor2.jpg",
+    //website: "https://www.supermarket.com",
     tier: "platinum"
   }
   // Add more sponsors here:
