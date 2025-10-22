@@ -18,14 +18,9 @@ const VideoSection = ({ videoSrc, title, description, className = "" }: VideoSec
   const [showControls, setShowControls] = useState(false)
 
   useEffect(() => {
-    // Attempt to autoplay when component mounts
-    if (videoRef.current) {
-      videoRef.current.play().catch((error) => {
-        console.log('Autoplay was prevented:', error)
-        setIsPlaying(false)
-      })
-      setIsPlaying(true)
-    }
+    // Don't autoplay to avoid conflicts with other videos
+    // User can manually start the video
+    setIsPlaying(false)
   }, [])
 
   const togglePlay = () => {
@@ -81,7 +76,6 @@ const VideoSection = ({ videoSrc, title, description, className = "" }: VideoSec
               ref={videoRef}
               className="w-full h-auto"
               muted={isMuted}
-              autoPlay
               playsInline
               loop
               onPlay={() => setIsPlaying(true)}
