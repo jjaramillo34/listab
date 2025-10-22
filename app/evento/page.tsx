@@ -198,6 +198,25 @@ export default function EventoPage() {
       {/* Header */}
       <header className="relative bg-gradient-to-r from-primary-600 to-orange-500 text-white py-16 overflow-hidden">
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+        
+        {/* Back Button */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-8"
+          >
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 bg-white bg-opacity-20 backdrop-blur-sm text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-30 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              <ArrowLeft className="w-5 h-5" />
+              Volver al Inicio
+            </Link>
+          </motion.div>
+        </div>
+        
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

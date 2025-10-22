@@ -585,6 +585,17 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
+            {/* Mascot */}
+            <div className="flex justify-center mb-6">
+              <AnimatedMascot 
+                size={100} 
+                animation="dance" 
+                showSparkles={true}
+                showName={true}
+                name="¡Gran Evento!"
+              />
+            </div>
+            
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               🎉 Gran Evento - 23 de Octubre
             </h2>
@@ -592,6 +603,46 @@ export default function Home() {
               ¡No te pierdas nuestro gran evento! Zanqueros, juegos, premios, golosinas, 
               caritas pintadas, granizados, algodón de azúcar y la presentación especial de Diego Villacis DVM.
             </p>
+            
+            {/* Event Info Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white bg-opacity-80 backdrop-blur-sm rounded-2xl p-6 shadow-lg"
+              >
+                <Calendar className="w-8 h-8 text-purple-600 mx-auto mb-3" />
+                <h3 className="text-lg font-bold text-gray-900 mb-2">23 de Octubre</h3>
+                <p className="text-gray-600 text-sm">8:00 AM - 9:15 AM</p>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="bg-white bg-opacity-80 backdrop-blur-sm rounded-2xl p-6 shadow-lg"
+              >
+                <Music className="w-8 h-8 text-pink-600 mx-auto mb-3" />
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Diego Villacis DVM</h3>
+                <p className="text-gray-600 text-sm">Artista Principal</p>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-white bg-opacity-80 backdrop-blur-sm rounded-2xl p-6 shadow-lg"
+              >
+                <PartyPopper className="w-8 h-8 text-orange-600 mx-auto mb-3" />
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Diversión Total</h3>
+                <p className="text-gray-600 text-sm">Zanqueros, juegos, premios</p>
+              </motion.div>
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/evento"
