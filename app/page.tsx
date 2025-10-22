@@ -39,6 +39,7 @@ import {
   Popcorn,
   Film,
   Lightbulb,
+  Calendar,
   Sparkles as SparklesIcon
 } from 'lucide-react'
 
@@ -571,6 +572,36 @@ export default function Home() {
               Ver Galería Completa
               <ArrowRight className="w-5 h-5" />
             </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Event Section */}
+      <section className="py-16 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              🎉 Gran Evento - 23 de Octubre
+            </h2>
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+              ¡No te pierdas nuestro gran evento! Zanqueros, juegos, premios, golosinas, 
+              caritas pintadas, granizados, algodón de azúcar y la presentación especial de Diego Villacis DVM.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/evento"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-4 px-8 rounded-full text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              >
+                <Calendar className="w-6 h-6" />
+                Ver Detalles del Evento
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
