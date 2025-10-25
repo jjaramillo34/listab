@@ -138,7 +138,7 @@ export const lanzamientoStats = {
   totalImages: 102,
   totalVideos: 4,
   totalActivities: 10,
-  duration: '4+ horas',
+  duration: '1+ horas',
   participants: 'Toda la comunidad escolar',
   date: '23 de Octubre, 2025'
 }
@@ -149,7 +149,7 @@ export const generateLanzamientoImages = (): LanzamientoImage[] => {
   const categories = ['zanqueros', 'juegos', 'premios', 'comida', 'actividades', 'especiales', 'equipo', 'mascota']
   
   // Generar imágenes con nombres simples (image001.jpeg, image002.jpeg, etc.)
-  for (let i = 1; i <= 97; i++) {
+  for (let i = 1; i <= 102; i++) {
     const category = categories[i % categories.length]
     const imageNumber = i.toString().padStart(3, '0')
     
