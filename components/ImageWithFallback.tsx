@@ -17,7 +17,7 @@ interface ImageWithFallbackProps {
 
 const ImageWithFallback = ({
   src,
-  fallbackSrc = '/images/campaign-banner.jpeg',
+  fallbackSrc = '/images/campaign-banner.webp',
   alt,
   fill,
   width,

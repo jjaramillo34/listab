@@ -1,0 +1,22 @@
+{
+  "timestamp": "/Users/javierjaramillo/projects/listab",
+  "input_directory": "public/images",
+  "output_directory": "public/images_optimized",
+  "settings": {
+    "quality": 85,
+    "max_size": [
+      1920,
+      1080
+    ],
+    "output_format": ".webp"
+  },
+  "statistics": {
+    "processed": 108,
+    "converted": 108,
+    "duplicates_removed": 97,
+    "resized": 84,
+    "errors": 0,
+    "original_size": 22906384,
+    "optimized_size": 16414736
+  }
+}

@@ -1,0 +1,494 @@
+{
+  "timestamp": "2025-10-24T22:09:40.664945",
+  "input_directory": "public/images/lanzamiento/images",
+  "output_directory": "public/images/lanzamiento/images",
+  "total_files": 97,
+  "renamed_files": 97,
+  "mapping": [
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 10.42.57 AM (1).webp",
+      "new": "public/images/lanzamiento/images/image001.webp",
+      "index": 1
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 10.42.58 AM (2).webp",
+      "new": "public/images/lanzamiento/images/image002.webp",
+      "index": 2
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 10.42.58 AM (3).webp",
+      "new": "public/images/lanzamiento/images/image003.webp",
+      "index": 3
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 10.42.59 AM (2).webp",
+      "new": "public/images/lanzamiento/images/image004.webp",
+      "index": 4
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 10.43.00 AM (3).webp",
+      "new": "public/images/lanzamiento/images/image005.webp",
+      "index": 5
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.23.50 AM.webp",
+      "new": "public/images/lanzamiento/images/image006.webp",
+      "index": 6
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.23.51 AM (1).webp",
+      "new": "public/images/lanzamiento/images/image007.webp",
+      "index": 7
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.23.51 AM (2).webp",
+      "new": "public/images/lanzamiento/images/image008.webp",
+      "index": 8
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.23.51 AM.webp",
+      "new": "public/images/lanzamiento/images/image009.webp",
+      "index": 9
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.30.54 AM (1).webp",
+      "new": "public/images/lanzamiento/images/image010.webp",
+      "index": 10
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.30.54 AM.webp",
+      "new": "public/images/lanzamiento/images/image011.webp",
+      "index": 11
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.31.35 AM.webp",
+      "new": "public/images/lanzamiento/images/image012.webp",
+      "index": 12
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.31.36 AM (2).webp",
+      "new": "public/images/lanzamiento/images/image013.webp",
+      "index": 13
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.31.36 AM.webp",
+      "new": "public/images/lanzamiento/images/image014.webp",
+      "index": 14
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.31.37 AM (1).webp",
+      "new": "public/images/lanzamiento/images/image015.webp",
+      "index": 15
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.31.37 AM.webp",
+      "new": "public/images/lanzamiento/images/image016.webp",
+      "index": 16
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.31.38 AM (1).webp",
+      "new": "public/images/lanzamiento/images/image017.webp",
+      "index": 17
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.31.38 AM (2).webp",
+      "new": "public/images/lanzamiento/images/image018.webp",
+      "index": 18
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.31.42 AM (1).webp",
+      "new": "public/images/lanzamiento/images/image019.webp",
+      "index": 19
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.32.24 AM.webp",
+      "new": "public/images/lanzamiento/images/image020.webp",
+      "index": 20
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.32.25 AM.webp",
+      "new": "public/images/lanzamiento/images/image021.webp",
+      "index": 21
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.32.27 AM (1).webp",
+      "new": "public/images/lanzamiento/images/image022.webp",
+      "index": 22
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.32.27 AM (2).webp",
+      "new": "public/images/lanzamiento/images/image023.webp",
+      "index": 23
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.32.27 AM (3).webp",
+      "new": "public/images/lanzamiento/images/image024.webp",
+      "index": 24
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.32.28 AM (1).webp",
+      "new": "public/images/lanzamiento/images/image025.webp",
+      "index": 25
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.32.28 AM.webp",
+      "new": "public/images/lanzamiento/images/image026.webp",
+      "index": 26
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.32.29 AM.webp",
+      "new": "public/images/lanzamiento/images/image027.webp",
+      "index": 27
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.32.30 AM (2).webp",
+      "new": "public/images/lanzamiento/images/image028.webp",
+      "index": 28
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.32.30 AM.webp",
+      "new": "public/images/lanzamiento/images/image029.webp",
+      "index": 29
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 11.32.31 AM.webp",
+      "new": "public/images/lanzamiento/images/image030.webp",
+      "index": 30
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 12.30.34 PM (2).webp",
+      "new": "public/images/lanzamiento/images/image031.webp",
+      "index": 31
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 12.30.34 PM.webp",
+      "new": "public/images/lanzamiento/images/image032.webp",
+      "index": 32
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 12.30.35 PM (2).webp",
+      "new": "public/images/lanzamiento/images/image033.webp",
+      "index": 33
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 12.30.35 PM.webp",
+      "new": "public/images/lanzamiento/images/image034.webp",
+      "index": 34
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 12.30.36 PM.webp",
+      "new": "public/images/lanzamiento/images/image035.webp",
+      "index": 35
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 12.30.37 PM.webp",
+      "new": "public/images/lanzamiento/images/image036.webp",
+      "index": 36
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 12.32.08 PM.webp",
+      "new": "public/images/lanzamiento/images/image037.webp",
+      "index": 37
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 12.32.10 PM.webp",
+      "new": "public/images/lanzamiento/images/image038.webp",
+      "index": 38
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 12.32.11 PM.webp",
+      "new": "public/images/lanzamiento/images/image039.webp",
+      "index": 39
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 12.35.11 PM.webp",
+      "new": "public/images/lanzamiento/images/image040.webp",
+      "index": 40
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 12.35.12 PM.webp",
+      "new": "public/images/lanzamiento/images/image041.webp",
+      "index": 41
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 2.06.00 PM.webp",
+      "new": "public/images/lanzamiento/images/image042.webp",
+      "index": 42
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 2.06.01 PM.webp",
+      "new": "public/images/lanzamiento/images/image043.webp",
+      "index": 43
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 2.06.02 PM.webp",
+      "new": "public/images/lanzamiento/images/image044.webp",
+      "index": 44
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 2.06.08 PM.webp",
+      "new": "public/images/lanzamiento/images/image045.webp",
+      "index": 45
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 2.06.11 PM.webp",
+      "new": "public/images/lanzamiento/images/image046.webp",
+      "index": 46
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 2.06.12 PM.webp",
+      "new": "public/images/lanzamiento/images/image047.webp",
+      "index": 47
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 2.06.16 PM.webp",
+      "new": "public/images/lanzamiento/images/image048.webp",
+      "index": 48
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 2.06.17 PM.webp",
+      "new": "public/images/lanzamiento/images/image049.webp",
+      "index": 49
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 2.06.19 PM.webp",
+      "new": "public/images/lanzamiento/images/image050.webp",
+      "index": 50
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 2.06.23 PM (1).webp",
+      "new": "public/images/lanzamiento/images/image051.webp",
+      "index": 51
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 2.06.23 PM (2).webp",
+      "new": "public/images/lanzamiento/images/image052.webp",
+      "index": 52
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 2.06.23 PM (3).webp",
+      "new": "public/images/lanzamiento/images/image053.webp",
+      "index": 53
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 2.06.24 PM.webp",
+      "new": "public/images/lanzamiento/images/image054.webp",
+      "index": 54
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 2.06.26 PM (1).webp",
+      "new": "public/images/lanzamiento/images/image055.webp",
+      "index": 55
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 2.06.26 PM.webp",
+      "new": "public/images/lanzamiento/images/image056.webp",
+      "index": 56
+    },
+    {
+      "original": "public/images/lanzamiento/images/WhatsApp Image 2025-10-23 at 2.09.50 PM.webp",
+      "new": "public/images/lanzamiento/images/image057.webp",
+      "index": 57
+    },
+    {
+      "original": "public/images/lanzamiento/images/image001.webp",
+      "new": "public/images/lanzamiento/images/image058.webp",
+      "index": 58
+    },
+    {
+      "original": "public/images/lanzamiento/images/image006.webp",
+      "new": "public/images/lanzamiento/images/image059.webp",
+      "index": 59
+    },
+    {
+      "original": "public/images/lanzamiento/images/image007.webp",
+      "new": "public/images/lanzamiento/images/image060.webp",
+      "index": 60
+    },
+    {
+      "original": "public/images/lanzamiento/images/image009.webp",
+      "new": "public/images/lanzamiento/images/image061.webp",
+      "index": 61
+    },
+    {
+      "original": "public/images/lanzamiento/images/image010.webp",
+      "new": "public/images/lanzamiento/images/image062.webp",
+      "index": 62
+    },
+    {
+      "original": "public/images/lanzamiento/images/image011.webp",
+      "new": "public/images/lanzamiento/images/image063.webp",
+      "index": 63
+    },
+    {
+      "original": "public/images/lanzamiento/images/image016.webp",
+      "new": "public/images/lanzamiento/images/image064.webp",
+      "index": 64
+    },
+    {
+      "original": "public/images/lanzamiento/images/image017.webp",
+      "new": "public/images/lanzamiento/images/image065.webp",
+      "index": 65
+    },
+    {
+      "original": "public/images/lanzamiento/images/image020.webp",
+      "new": "public/images/lanzamiento/images/image066.webp",
+      "index": 66
+    },
+    {
+      "original": "public/images/lanzamiento/images/image021.webp",
+      "new": "public/images/lanzamiento/images/image067.webp",
+      "index": 67
+    },
+    {
+      "original": "public/images/lanzamiento/images/image023.webp",
+      "new": "public/images/lanzamiento/images/image068.webp",
+      "index": 68
+    },
+    {
+      "original": "public/images/lanzamiento/images/image030.webp",
+      "new": "public/images/lanzamiento/images/image069.webp",
+      "index": 69
+    },
+    {
+      "original": "public/images/lanzamiento/images/image031.webp",
+      "new": "public/images/lanzamiento/images/image070.webp",
+      "index": 70
+    },
+    {
+      "original": "public/images/lanzamiento/images/image032.webp",
+      "new": "public/images/lanzamiento/images/image071.webp",
+      "index": 71
+    },
+    {
+      "original": "public/images/lanzamiento/images/image033.webp",
+      "new": "public/images/lanzamiento/images/image072.webp",
+      "index": 72
+    },
+    {
+      "original": "public/images/lanzamiento/images/image034.webp",
+      "new": "public/images/lanzamiento/images/image073.webp",
+      "index": 73
+    },
+    {
+      "original": "public/images/lanzamiento/images/image036.webp",
+      "new": "public/images/lanzamiento/images/image074.webp",
+      "index": 74
+    },
+    {
+      "original": "public/images/lanzamiento/images/image037.webp",
+      "new": "public/images/lanzamiento/images/image075.webp",
+      "index": 75
+    },
+    {
+      "original": "public/images/lanzamiento/images/image040.webp",
+      "new": "public/images/lanzamiento/images/image076.webp",
+      "index": 76
+    },
+    {
+      "original": "public/images/lanzamiento/images/image041.webp",
+      "new": "public/images/lanzamiento/images/image077.webp",
+      "index": 77
+    },
+    {
+      "original": "public/images/lanzamiento/images/image042.webp",
+      "new": "public/images/lanzamiento/images/image078.webp",
+      "index": 78
+    },
+    {
+      "original": "public/images/lanzamiento/images/image046.webp",
+      "new": "public/images/lanzamiento/images/image079.webp",
+      "index": 79
+    },
+    {
+      "original": "public/images/lanzamiento/images/image049.webp",
+      "new": "public/images/lanzamiento/images/image080.webp",
+      "index": 80
+    },
+    {
+      "original": "public/images/lanzamiento/images/image050.webp",
+      "new": "public/images/lanzamiento/images/image081.webp",
+      "index": 81
+    },
+    {
+      "original": "public/images/lanzamiento/images/image052.webp",
+      "new": "public/images/lanzamiento/images/image082.webp",
+      "index": 82
+    },
+    {
+      "original": "public/images/lanzamiento/images/image056.webp",
+      "new": "public/images/lanzamiento/images/image083.webp",
+      "index": 83
+    },
+    {
+      "original": "public/images/lanzamiento/images/image057.webp",
+      "new": "public/images/lanzamiento/images/image084.webp",
+      "index": 84
+    },
+    {
+      "original": "public/images/lanzamiento/images/image060.webp",
+      "new": "public/images/lanzamiento/images/image085.webp",
+      "index": 85
+    },
+    {
+      "original": "public/images/lanzamiento/images/image070.webp",
+      "new": "public/images/lanzamiento/images/image086.webp",
+      "index": 86
+    },
+    {
+      "original": "public/images/lanzamiento/images/image074.webp",
+      "new": "public/images/lanzamiento/images/image087.webp",
+      "index": 87
+    },
+    {
+      "original": "public/images/lanzamiento/images/image076.webp",
+      "new": "public/images/lanzamiento/images/image088.webp",
+      "index": 88
+    },
+    {
+      "original": "public/images/lanzamiento/images/image079.webp",
+      "new": "public/images/lanzamiento/images/image089.webp",
+      "index": 89
+    },
+    {
+      "original": "public/images/lanzamiento/images/image082.webp",
+      "new": "public/images/lanzamiento/images/image090.webp",
+      "index": 90
+    },
+    {
+      "original": "public/images/lanzamiento/images/image084.webp",
+      "new": "public/images/lanzamiento/images/image091.webp",
+      "index": 91
+    },
+    {
+      "original": "public/images/lanzamiento/images/image085.webp",
+      "new": "public/images/lanzamiento/images/image092.webp",
+      "index": 92
+    },
+    {
+      "original": "public/images/lanzamiento/images/image086.webp",
+      "new": "public/images/lanzamiento/images/image093.webp",
+      "index": 93
+    },
+    {
+      "original": "public/images/lanzamiento/images/image090.webp",
+      "new": "public/images/lanzamiento/images/image094.webp",
+      "index": 94
+    },
+    {
+      "original": "public/images/lanzamiento/images/image091.webp",
+      "new": "public/images/lanzamiento/images/image095.webp",
+      "index": 95
+    },
+    {
+      "original": "public/images/lanzamiento/images/image093.webp",
+      "new": "public/images/lanzamiento/images/image096.webp",
+      "index": 96
+    },
+    {
+      "original": "public/images/lanzamiento/images/image095.webp",
+      "new": "public/images/lanzamiento/images/image097.webp",
+      "index": 97
+    }
+  ]
+}

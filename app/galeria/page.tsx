@@ -30,91 +30,91 @@ export default function GaleriaPage() {
   // Gallery data with inspiring messages
   const galleryImages = [
     {
-      src: "/images/galleria/image1.jpeg",
+      src: "/images/galleria/image1.webp",
       title: "Firma Oficial",
       message: "Compromiso firmado, promesas hechas realidad ✍️",
       category: "oficial"
     },
     {
-      src: "/images/galleria/image2.jpeg",
+      src: "/images/galleria/image2.webp",
       title: "Firma Oficial",
       message: "Compromiso firmado, promesas hechas realidad ✍️",
       category: "oficial"
     },
     {
-      src: "/images/galleria/image3.jpeg",
+      src: "/images/galleria/image3.webp",
       title: "Firma Oficial",
       message: "Juntos somos más fuertes, juntos somos Lista B 💪",
       category: "oficial"
     },
     {
-      src: "/images/galleria/image4.jpeg",
+      src: "/images/galleria/image4.webp",
       title: "Momentos de Alegría",
       message: "La felicidad se contagia cuando trabajamos por un objetivo común 😊",
       category: "alegria"
     },
     {
-      src: "/images/galleria/image5.jpeg",
+      src: "/images/galleria/image5.webp",
       title: "Firma Oficial",
       message: "Cada detalle cuenta, cada esfuerzo vale la pena ⚡",
       category: "oficial"
     },
     {
-      src: "/images/galleria/image6.jpeg",
+      src: "/images/galleria/image6.webp",
       title: "Firma Oficial",
       message: "Celebramos cada logro, cada paso hacia la victoria 🎉",
       category: "oficial"
     },
     {
-      src: "/images/galleria/image7.jpeg",
+      src: "/images/galleria/image7.webp",
       title: "Momento Histórico",
       message: "Un día que quedará en la historia de nuestro colegio 📚",
       category: "historico"
     },
     {
-      src: "/images/galleria/image8.jpeg",
+      src: "/images/galleria/image8.webp",
       title: "Sonrisas Genuinas",
       message: "La autenticidad de nuestro compromiso se refleja en cada sonrisa 😄",
       category: "autenticidad"
     },
     {
-      src: "/images/galleria/image9.jpeg",
+      src: "/images/galleria/image9.webp",
       title: "Trabajo en Equipo",
       message: "La unión hace la fuerza - Lista B trabajando como uno solo 🤝",
       category: "union"
     },
     {
-      src: "/images/galleria/image10.jpeg",
+      src: "/images/galleria/image10.webp",
       title: "Momento Especial",
       message: "Cada instante es único cuando trabajamos por nuestros sueños ✨",
       category: "especial"
     },
     {
-      src: "/images/galleria/image11.jpeg",
+      src: "/images/galleria/image11.webp",
       title: "Firma Oficial",
       message: "El documento que marca el inicio de una nueva era 📋",
       category: "oficial"
     },
     {
-      src: "/images/galleria/image12.jpeg",
+      src: "/images/galleria/image12.webp",
       title: "Celebración Colectiva",
       message: "Toda la comunidad celebra el inicio de Lista B 🎊",
       category: "comunidad"
     },
     {
-      src: "/images/galleria/image13.jpeg",
+      src: "/images/galleria/image13.webp",
       title: "Momento de Reflexión",
       message: "Pensando en el futuro que queremos construir juntos 🤔",
       category: "reflexion"
     },
     {
-      src: "/images/galleria/image14.jpeg",
+      src: "/images/galleria/image14.webp",
       title: "Energía Positiva",
       message: "La energía de Lista B se siente en cada rincón del colegio ⚡",
       category: "energia"
     },
     {
-      src: "/images/galleria/image15.jpeg",
+      src: "/images/galleria/image15.webp",
       title: "El Futuro Comienza",
       message: "Hoy empezamos a escribir el futuro de nuestro colegio 🌟",
       category: "futuro"

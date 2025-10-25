@@ -414,7 +414,7 @@ export default function EventoPage() {
                   <video
                     ref={videoRef}
                     className="w-full aspect-video"
-                    poster="/images/campaign-banner.jpeg"
+                    poster="/images/campaign-banner.webp"
                     onTimeUpdate={handleTimeUpdate}
                     onLoadedMetadata={handleLoadedMetadata}
                     onPlay={() => setIsPlaying(true)}

@@ -23,7 +23,7 @@ export const donors: Donor[] = [
     name: "Francisco Colón",
     type: "individual",
     amount: "gold",
-    //photo: "/images/donaciones/donor1.jpeg"
+    //photo: "/images/donaciones/donor1.webp"
   },
   {
     name: "Danielle Graziano",
@@ -51,12 +51,12 @@ export const donors: Donor[] = [
 export const sponsors: Sponsor[] = [
   {
     name: "ColpoVital Dra. Giannina Arroba",
-    logo: "/images/donaciones/donor1.jpeg",
+    logo: "/images/donaciones/donor1.webp",
     tier: "platinum"
   },
   {
     name: "Matrix Training Center",
-    logo: "/images/donaciones/donor2.jpg",
+    logo: "/images/donaciones/donor2.webp",
     //website: "https://www.supermarket.com",
     tier: "platinum"
   }

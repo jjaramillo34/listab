@@ -259,7 +259,7 @@ export default function Home() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/campaign-banner.jpeg"
+                  src="/images/campaign-banner.webp"
                   alt="Lista B Campaign Banner"
                   width={600}
                   height={400}
@@ -557,21 +557,54 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              📸 Galería del Lanzamiento
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              📸 Galerías de Fotos
             </h2>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Revive los momentos más emocionantes del lanzamiento oficial de Lista B. 
-              Cada imagen cuenta una historia de compromiso y esperanza.
+              Revive los mejores momentos de nuestra campaña y el lanzamiento oficial
             </p>
-            <Link
-              href="/galeria"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white font-bold py-4 px-8 rounded-full text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-            >
-              <Camera className="w-6 h-6" />
-              Ver Galería Completa
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="text-4xl mb-4">📸</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Galería de Campaña</h3>
+                <p className="text-gray-600 mb-6">Fotos oficiales y momentos especiales de la campaña</p>
+                <Link
+                  href="/galeria"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                >
+                  <Camera className="w-5 h-5" />
+                  Ver Galería
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="text-4xl mb-4">🎉</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Lanzamiento Oficial</h3>
+                <p className="text-gray-600 mb-6">Más de 100 fotos del gran evento de lanzamiento</p>
+                <Link
+                  href="/lanzamiento"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                >
+                  <PartyPopper className="w-5 h-5" />
+                  Ver Lanzamiento
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>

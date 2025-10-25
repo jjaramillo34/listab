@@ -174,7 +174,7 @@ export default function DonationsSection() {
                       alt={sponsor.name}
                       fill
                       className="object-contain"
-                      fallbackSrc="/images/campaign-banner.jpeg"
+                      fallbackSrc="/images/campaign-banner.webp"
                     />
                   </div>
                   {/* Name */}
@@ -250,7 +250,7 @@ export default function DonationsSection() {
                           alt={donor.name}
                           fill
                           className="object-cover"
-                          fallbackSrc="/images/campaign-banner.jpeg"
+                          fallbackSrc="/images/campaign-banner.webp"
                         />
                       </div>
                     )}

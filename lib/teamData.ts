@@ -28,13 +28,13 @@ export const teamMembers: TeamMember[] = [
     "animation": "dance",
     "showSparkles": true,
     "gorillaName": "Gorilín",
-    "photo": "/images/team/daniel.jpeg",
+    "photo": "/images/team/daniel.webp",
     "photos": [
-      "/images/team/daniel1.jpeg",
-      "/images/team/daniel2.jpeg",
-      "/images/team/daniel3.jpeg",
-      "/images/team/daniel4.jpeg",
-      "/images/team/daniel5.jpeg"
+      "/images/team/daniel1.webp",
+      "/images/team/daniel2.webp",
+      "/images/team/daniel3.webp",
+      "/images/team/daniel4.webp",
+      "/images/team/daniel5.webp"
     ],
     "year": "2025",
     "age": 16,
@@ -55,13 +55,13 @@ export const teamMembers: TeamMember[] = [
     "animation": "bounce",
     "showSparkles": false,
     "gorillaName": "Gorilón",
-    "photo": "/images/team/ian.jpeg",
+    "photo": "/images/team/ian.webp",
     "photos": [
-      "/images/team/ian1.jpeg",
-      "/images/team/ian2.jpeg",
-      "/images/team/ian3.jpeg",
-      "/images/team/ian4.jpeg",
-      "/images/team/ian5.jpeg"
+      "/images/team/ian1.webp",
+      "/images/team/ian2.webp",
+      "/images/team/ian3.webp",
+      "/images/team/ian4.webp",
+      "/images/team/ian5.webp"
     ],
     "year": "2025",
     "age": 16,
@@ -82,13 +82,13 @@ export const teamMembers: TeamMember[] = [
     "animation": "pulse",
     "showSparkles": true,
     "gorillaName": "Gorilita",
-    "photo": "/images/team/sofy.jpeg",
+    "photo": "/images/team/sofy.webp",
     "photos": [
-      "/images/team/sofy1.jpeg",
-      "/images/team/sofy2.jpeg",
-      "/images/team/sofy3.jpeg",
-      "/images/team/sofy4.jpeg",
-      "/images/team/sofy5.jpeg"
+      "/images/team/sofy1.webp",
+      "/images/team/sofy2.webp",
+      "/images/team/sofy3.webp",
+      "/images/team/sofy4.webp",
+      "/images/team/sofy5.webp"
     ],
     "year": "2025",
     "age": 13,
@@ -109,13 +109,13 @@ export const teamMembers: TeamMember[] = [
     "animation": "float",
     "showSparkles": true,
     "gorillaName": "Gorilita",
-    "photo": "/images/team/valentina.jpeg",
+    "photo": "/images/team/valentina.webp",
     "photos": [
-      "/images/team/valentina1.jpeg",
-      "/images/team/valentina2.jpeg",
-      "/images/team/valentina3.jpeg",
-      "/images/team/valentina4.jpeg",
-      "/images/team/valentina5.jpeg"
+      "/images/team/valentina1.webp",
+      "/images/team/valentina2.webp",
+      "/images/team/valentina3.webp",
+      "/images/team/valentina4.webp",
+      "/images/team/valentina5.webp"
     ],
     "year": "2025",
     "age": 11,
@@ -136,13 +136,13 @@ export const teamMembers: TeamMember[] = [
     "animation": "wiggle",
     "showSparkles": false,
     "gorillaName": "Gorilita",
-    "photo": "/images/team/majo.jpeg",
+    "photo": "/images/team/majo.webp",
     "photos": [
-      "/images/team/majo1.jpeg",
-      "/images/team/majo2.jpeg",
-      "/images/team/majo3.jpeg",
-      "/images/team/majo4.jpeg",
-      "/images/team/majo5.jpeg"
+      "/images/team/majo1.webp",
+      "/images/team/majo2.webp",
+      "/images/team/majo3.webp",
+      "/images/team/majo4.webp",
+      "/images/team/majo5.webp"
     ],
     "year": "2025",
     "age": 8,
@@ -163,13 +163,13 @@ export const teamMembers: TeamMember[] = [
     "animation": "dance",
     "showSparkles": false,
     "gorillaName": "Gorilíta",
-    "photo": "/images/team/giuliana.jpeg",
+    "photo": "/images/team/giuliana.webp",
     "photos": [
-      "/images/team/giuliana1.jpeg",
-      "/images/team/giuliana2.jpeg",
-      "/images/team/giuliana3.jpeg",
-      "/images/team/giuliana4.jpeg",
-      "/images/team/giuliana5.jpeg"
+      "/images/team/giuliana1.webp",
+      "/images/team/giuliana2.webp",
+      "/images/team/giuliana3.webp",
+      "/images/team/giuliana4.webp",
+      "/images/team/giuliana5.webp"
     ],
     "year": "2025",
     "age": 7,
